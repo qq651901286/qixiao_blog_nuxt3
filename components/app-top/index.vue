@@ -17,12 +17,11 @@
         </ul>
       </div>
       <div class="right">
-        <el-input
-            v-model="input3"
-            class="w-50 m-2"
-            size="small"
-            placeholder="Please Input"
-            :suffix-icon="Search"
+        <el-autocomplete
+            v-model="searchStr"
+            :fetch-suggestions="querySearchAsync"
+            placeholder="搜索"
+            @change="searchHandleChange"
         />
       </div>
     </div>
@@ -30,7 +29,24 @@
 </template>
 
 <script setup lang="ts">
-import { Search } from '@element-plus/icons-vue'
+// 搜索的字符串
+let searchStr = ref<string>('');
+
+// 搜索出来的内容
+interface searchContentArr {
+  key: string
+  value: string
+}
+
+const querySearchAsync = (queryString: string, cb: (arg: any) => void) => {
+  cb()
+}
+
+const searchHandleChange = (item: any) => {
+
+}
+
+
 </script>
 
 <style scoped lang="scss">
@@ -38,7 +54,7 @@ import { Search } from '@element-plus/icons-vue'
   // 固定最上面
   position: fixed;
   z-index: 999;
-  
+
   width: 100%;
   height: 80px;
   background: #d4d4e2;
@@ -46,10 +62,39 @@ import { Search } from '@element-plus/icons-vue'
   // 让内容居中
   display: flex;
   justify-content: center;
+
   .content {
     width: 1200px;
     height: 80px;
     background: #af3db5;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .left {
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-left: 15px;
+        width: 120px;
+        height: 30px;
+      }
+
+      ul {
+        display: flex;
+
+        li {
+          margin-left: 15px;
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      margin-right: 15px;
+    }
   }
 }
 </style>
