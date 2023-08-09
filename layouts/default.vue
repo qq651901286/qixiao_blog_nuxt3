@@ -1,8 +1,14 @@
 <template>
   <div class="container">
-    <!--顶部-->
-    <AppTop></AppTop>
-    <!--轮播图-->
+    <div class="top">
+      <!--顶部-->
+      <AppTop></AppTop>
+    </div>
+    <div class="advertisement">
+      <!--轮播图-->
+      <Advertisement></Advertisement>
+    </div>
+
 
     <!--左边 我的资料信息-->
     <!--展示的内容区域-->
@@ -21,5 +27,9 @@
 </script>
 
 <style scoped lang="scss">
+.container {
+  .top {
 
+  }
+}
 </style>
