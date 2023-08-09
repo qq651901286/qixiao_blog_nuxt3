@@ -2,10 +2,10 @@
   <div class="top">
     <div class="content">
       <div class="left">
-        <img src="https://blog.nineya.com/upload/2023/04/logo.png">
+        <img src="https://blog.nineya.com/upload/2023/04/logo.png" @click="logoClick()" />
 
         <ul>
-          <li>首页</li>
+          <li class="activate">首页</li>
           <li>生活</li>
           <li>归档</li>
           <li>分类</li>
@@ -20,8 +20,9 @@
         <el-autocomplete
             v-model="searchStr"
             :fetch-suggestions="querySearchAsync"
-            placeholder="搜索"
-            @change="searchHandleChange"
+            placeholder="搜索..."
+            value-key="value"
+            @select="handleSelect"
         />
       </div>
     </div>
@@ -29,24 +30,66 @@
 </template>
 
 <script setup lang="ts">
-// 搜索的字符串
-let searchStr = ref<string>('');
+const router = useRouter();
+const searchStr = ref('')
 
-// 搜索出来的内容
-interface searchContentArr {
-  key: string
+interface LinkItem {
   value: string
+  link: string
 }
 
+// 搜索框内容
+const links = ref<LinkItem[]>([])
+
+// 搜索框数据
+const loadAll = () => {
+  return [
+    { value: 'vue', link: 'https://github.com/vuejs/vue' },
+    { value: 'element', link: 'https://github.com/ElemeFE/element' },
+    { value: 'cooking', link: 'https://github.com/ElemeFE/cooking' },
+    { value: 'mint-ui', link: 'https://github.com/ElemeFE/mint-ui' },
+    { value: 'vuex', link: 'https://github.com/vuejs/vuex' },
+    { value: 'vue-router', link: 'https://github.com/vuejs/vue-router' },
+    { value: 'babel', link: 'https://github.com/babel/babel' },
+  ]
+}
+
+let timeout: NodeJS.Timeout
+// 返回搜索框数据
 const querySearchAsync = (queryString: string, cb: (arg: any) => void) => {
-  cb()
+  const results = queryString
+      ? links.value.filter(createFilter(queryString))
+      : links.value
+
+  clearTimeout(timeout)
+  timeout = setTimeout(() => {
+    cb(results)
+  }, 100 * Math.random())
+}
+// 过滤搜索框
+const createFilter = (queryString: string) => {
+  return (restaurant: LinkItem) => {
+    return (
+        restaurant.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0
+    )
+  }
+}
+// 选择搜索框内容
+const handleSelect = (item: LinkItem) => {
+  console.log(item)
 }
 
-const searchHandleChange = (item: any) => {
-
+// logon被单击
+const logoClick = ()=> {
+  router.push({
+    path:'/'
+  });
 }
 
-
+onMounted(() => {
+  // 加载搜索数据
+  links.value = loadAll()
+})
 </script>
 
 <style scoped lang="scss">
@@ -57,7 +100,6 @@ const searchHandleChange = (item: any) => {
 
   width: 100%;
   height: 80px;
-  background: #d4d4e2;
 
   // 让内容居中
   display: flex;
@@ -66,7 +108,7 @@ const searchHandleChange = (item: any) => {
   .content {
     width: 1200px;
     height: 80px;
-    background: #af3db5;
+    background: #cccccc;
 
     display: flex;
     justify-content: space-between;
@@ -87,6 +129,11 @@ const searchHandleChange = (item: any) => {
 
         li {
           margin-left: 15px;
+          cursor:pointer;
+
+          &.activate {
+            color: blue;
+          }
         }
       }
     }
