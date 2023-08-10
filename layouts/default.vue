@@ -10,12 +10,7 @@
     </div>
 
     <div class="main">
-      <!--左边 我的资料信息-->
-      <!--展示的内容区域-->
-      <div class="content">
-        <NuxtPage></NuxtPage>
-      </div>
-      <!--右边 推送的一些博客-->
+      <Main></Main>
     </div>
 
 
