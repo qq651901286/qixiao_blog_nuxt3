@@ -2,6 +2,20 @@
   <div class="container">
     <div class="bottom">
 
+      <div class="copyright">
+        © 2023 - 2099 By 奇小
+      </div>
+      <div class="icp">
+        粤ICP备XXXXXXX号
+      </div>
+      <div class="web-info">
+        <p>博客数量：222篇</p>
+        <p>运行时长：99天</p>
+        <p>总访问量：343434</p>
+      </div>
+      <div class="friend-link">
+        
+      </div>
     </div>
   </div>
 </template>
