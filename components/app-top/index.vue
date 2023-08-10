@@ -94,10 +94,6 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .top {
-
-  width: 100%;
-  height: 80px;
-
   // 让内容居中
   display: flex;
   justify-content: center;
