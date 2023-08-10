@@ -13,8 +13,10 @@
       <Main></Main>
     </div>
 
-
     <!--底部-->
+    <div class="bottom">
+      <AppBottom></AppBottom>
+    </div>
 
   </div>
 </template>
