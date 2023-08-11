@@ -17,23 +17,23 @@
       </div>
       <div class="friend-link">
         <p>
-          <el-link href="https://element-plus.org" target="_blank">
-            elment-plus
+          <el-link>
+            联系我们
           </el-link>
         </p>
         <p>
-          <el-link href="https://element-plus.org" target="_blank">
-            elment-plus
+          <el-link>
+            反馈意见
           </el-link>
         </p>
         <p>
-          <el-link href="https://element-plus.org" target="_blank">
-            elment-plus
+          <el-link>
+            友链申请
           </el-link>
         </p>
         <p>
-          <el-link href="https://element-plus.org" target="_blank">
-            elment-plus
+          <el-link>
+            加入我们
           </el-link>
         </p>
       </div>

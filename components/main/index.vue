@@ -34,17 +34,17 @@
       justify-content: space-between;
       .left {
         width: 230px;
-        height: 3100px;
+        height: 1200px;
         background: #fff4f4;
       }
       .nuxt-page {
         width: 720px;
-        height: 3100px;
+        height: 1200px;
         background: #fff4f4;
       }
       .right {
         width: 230px;
-        height: 3100px;
+        height: 1200px;
         background: #fff4f4;
       }
     }
