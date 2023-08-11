@@ -30,22 +30,21 @@
   .main {
     .content {
       width: 1200px;
-      height: 3100px;
       display: flex;
       justify-content: space-between;
       .left {
         width: 230px;
-        height: 3500px;
+        height: 3100px;
         background: #fff4f4;
       }
       .nuxt-page {
         width: 720px;
-        height: 3500px;
+        height: 3100px;
         background: #fff4f4;
       }
       .right {
         width: 230px;
-        height: 3500px;
+        height: 3100px;
         background: #fff4f4;
       }
     }

@@ -4,17 +4,52 @@
       <div class="content">
         <div class="left">
           <img src="https://blog.nineya.com/upload/2023/04/logo.png" @click="logoClick()" />
-
           <ul>
-            <li class="activate">首页</li>
-            <li>生活</li>
-            <li>归档</li>
-            <li>分类</li>
-            <li>标签</li>
-            <li>动态</li>
-            <li>相册</li>
-            <li>友链</li>
-            <li>关于</li>
+            <li>
+              <el-link href="https://element-plus.org" target="_blank">
+                首页
+              </el-link>
+            </li>
+            <li>
+              <el-link href="https://element-plus.org" target="_blank">
+                生活
+              </el-link>
+            </li>
+            <li>
+              <el-link href="https://element-plus.org" target="_blank">
+                归档
+              </el-link>
+            </li>
+            <li>
+              <el-link href="https://element-plus.org" target="_blank">
+                分类
+              </el-link>
+            </li>
+            <li>
+              <el-link href="https://element-plus.org" target="_blank">
+                标签
+              </el-link>
+            </li>
+            <li>
+              <el-link href="https://element-plus.org" target="_blank">
+                动态
+              </el-link>
+            </li>
+            <li>
+              <el-link href="https://element-plus.org" target="_blank">
+                相册
+              </el-link>
+            </li>
+            <li>
+              <el-link href="https://element-plus.org" target="_blank">
+                友链
+              </el-link>
+            </li>
+            <li>
+              <el-link href="https://element-plus.org" target="_blank">
+                关于
+              </el-link>
+            </li>
           </ul>
         </div>
         <div class="right">
