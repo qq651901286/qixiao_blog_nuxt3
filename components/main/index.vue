@@ -30,24 +30,23 @@
   .main {
     .content {
       width: 1200px;
-      background: blue;
-      height: 3500px;
+      height: 3100px;
       display: flex;
       justify-content: space-between;
       .left {
         width: 230px;
         height: 3500px;
-        background: #9898a5;
+        background: #fff4f4;
       }
       .nuxt-page {
         width: 720px;
         height: 3500px;
-        background: #6eb859;
+        background: #fff4f4;
       }
       .right {
         width: 230px;
         height: 3500px;
-        background: #ea4444;
+        background: #fff4f4;
       }
     }
   }

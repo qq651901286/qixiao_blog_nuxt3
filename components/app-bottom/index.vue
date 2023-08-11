@@ -48,13 +48,12 @@
 <style scoped lang="scss">
 .container {
   margin-top: 20px;
-  background: #8f4dd0;
   display: flex;
   justify-content: center;
   .bottom {
     width: 1200px;
     height: 160px;
-    background: #b0bfaf;
+    background: pink;
     display: flex;
     align-items: center;
     justify-content: space-between;

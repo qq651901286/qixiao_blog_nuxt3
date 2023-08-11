@@ -103,7 +103,7 @@ onMounted(() => {
   .content {
     width: 1200px;
     height: 80px;
-    background: #cccccc;
+    background: pink;
 
     display: flex;
     justify-content: space-between;
