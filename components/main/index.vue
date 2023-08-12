@@ -3,13 +3,13 @@
     <div class="main">
       <div class="content">
         <div class="left">
-
+          <MainLeft></MainLeft>
         </div>
         <div class="nuxt-page">
           <NuxtPage></NuxtPage>
         </div>
         <div class="right">
-
+          <MainRight></MainRight>
         </div>
       </div>
     </div>
