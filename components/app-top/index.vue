@@ -3,7 +3,7 @@
     <div class="top">
       <div class="content">
         <div class="left">
-          <img src="https://blog.nineya.com/upload/2023/04/logo.png" @click="logoClick()" />
+          <img src="~/assets/img/logo.png" @click="logoClick()" />
           <ul>
             <li>
               <el-link href="https://element-plus.org" target="_blank">
