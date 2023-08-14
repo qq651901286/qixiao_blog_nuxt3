@@ -43,7 +43,6 @@
       .right {
         width: 230px;
         height: 1200px;
-        background: #fff4f4;
       }
     }
   }
