@@ -14,8 +14,29 @@
       </div>
       <div class="content">
         <ul>
-          <li v-for="item in 8" @click="blogClick(1)">
+          <li @click="blogClick(1)">
             Spring两大核心竟然这么简单，看了学不会来打我
+          </li>
+          <li @click="blogClick(1)">
+            十分钟学会SpringBoot，学不会来打我
+          </li>
+          <li @click="blogClick(1)">
+            CGLIB 和 JDK 两种动态代理方法对比
+          </li>
+          <li @click="blogClick(1)">
+            Spring 创建 Bean 的三种方式
+          </li>
+          <li @click="blogClick(1)">
+            在CentOS 7.6上单机部署Zookeeper
+          </li>
+          <li @click="blogClick(1)">
+            Redis基础入门，Redis远程连接，java连接Redis
+          </li>
+          <li @click="blogClick(1)">
+            分布式数据库系列——（一）强一致性
+          </li>
+          <li @click="blogClick(1)">
+            图算法之无权最短路径 - 基于Neo4j实现
           </li>
         </ul>
       </div>
@@ -377,6 +398,9 @@ const tagClick = (id: number) => {
 
       ul {
         li {
+          // 间距
+          letter-spacing:1px;
+
           height: 20px;
           margin: 10px 10px;
           font-size: 16px;
