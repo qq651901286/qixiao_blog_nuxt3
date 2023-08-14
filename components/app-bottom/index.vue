@@ -69,6 +69,10 @@
     .friend-link {
 
     }
+
+    ::v-deep(.el-link__inner) {
+      font-size: 16px;
+    }
   }
 }
 </style>

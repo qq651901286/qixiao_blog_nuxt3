@@ -81,76 +81,204 @@ const handleNodeClick = (data: Tree) => {
 
 const data: Tree[] = [
   {
-    label: '编程',
+    label: '中间件',
     children: [
       {
-        label: '前端',
+        label: '消息队列',
+        children: [
+          {
+            label: 'RabbitMQ',
+          },
+          {
+            label: 'Kafka',
+          },
+          {
+            label: 'RocketMQ',
+          },
+          {
+            label: 'ActiveMQ',
+          },
+        ],
+      },
+      {
+        label: 'web server',
+        children: [
+          {
+            label: 'Nginx',
+          },
+          {
+            label: 'OpenResty',
+          },
+          {
+            label: 'Tomcat',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    label: '编程语言',
+    children: [
+      {
+        label: 'Java',
+        children: [
+          {
+            label: 'SpringBoot',
+          },
+          {
+            label: 'String',
+          },
+          {
+            label: 'JVM',
+          },
+          {
+            label: 'JUC',
+          },
+        ],
+      },
+      {
+        label: 'JavaScript',
         children: [
           {
             label: 'Vue',
           },
-        ],
-      },
-    ],
-  },
-  {
-    label: 'Level one 2',
-    children: [
-      {
-        label: 'Level two 2-1',
-        children: [
           {
-            label: 'Level three 2-1-1',
+            label: 'Nuxt',
           },
-        ],
-      },
-      {
-        label: 'Level two 2-2',
-        children: [
           {
-            label: 'Level three 2-2-1',
+            label: 'Node',
+          },
+          {
+            label: 'React',
+          },
+          {
+            label: 'jQuery',
           },
         ],
       },
     ],
   },
   {
-    label: 'Level one 3',
+    label: '编程语言',
     children: [
       {
-        label: 'Level two 3-1',
+        label: 'Java',
         children: [
           {
-            label: 'Level three 3-1-1',
+            label: 'SpringBoot',
+          },
+          {
+            label: 'String',
+          },
+          {
+            label: 'JVM',
+          },
+          {
+            label: 'JUC',
           },
         ],
       },
       {
-        label: 'Level two 3-2',
+        label: 'JavaScript',
         children: [
           {
-            label: 'Level three 3-2-1',
+            label: 'Vue',
+          },
+          {
+            label: 'Nuxt',
+          },
+          {
+            label: 'Node',
+          },
+          {
+            label: 'React',
+          },
+          {
+            label: 'jQuery',
           },
         ],
       },
     ],
   },
   {
-    label: 'Level one 3',
+    label: '编程语言',
     children: [
       {
-        label: 'Level two 3-1',
+        label: 'Java',
         children: [
           {
-            label: 'Level three 3-1-1',
+            label: 'SpringBoot',
+          },
+          {
+            label: 'String',
+          },
+          {
+            label: 'JVM',
+          },
+          {
+            label: 'JUC',
           },
         ],
       },
       {
-        label: 'Level two 3-2',
+        label: 'JavaScript',
         children: [
           {
-            label: 'Level three 3-2-1',
+            label: 'Vue',
+          },
+          {
+            label: 'Nuxt',
+          },
+          {
+            label: 'Node',
+          },
+          {
+            label: 'React',
+          },
+          {
+            label: 'jQuery',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    label: '编程语言',
+    children: [
+      {
+        label: 'Java',
+        children: [
+          {
+            label: 'SpringBoot',
+          },
+          {
+            label: 'String',
+          },
+          {
+            label: 'JVM',
+          },
+          {
+            label: 'JUC',
+          },
+        ],
+      },
+      {
+        label: 'JavaScript',
+        children: [
+          {
+            label: 'Vue',
+          },
+          {
+            label: 'Nuxt',
+          },
+          {
+            label: 'Node',
+          },
+          {
+            label: 'React',
+          },
+          {
+            label: 'jQuery',
           },
         ],
       },
@@ -208,11 +336,20 @@ const tagClick = (id: number) => {
   width: 100%;
 
   .new-blog {
-    background: beige;
+    // 边框
+    border:1px solid #cccccc;
+    //border-top: 1px solid #cccccc;
+    //border-right: 1px solid #cccccc;
+    //border-left: 1px solid #cccccc;
+    //border-bottom: 1px solid #cccccc;
+
     height: 300px;
     width: 100%;
 
     .up {
+      // 边框
+      border-bottom: 1px solid #cccccc;
+
       width: 100%;
       height: 40px;
       display: flex;
@@ -233,7 +370,9 @@ const tagClick = (id: number) => {
     }
 
     .content {
-      height: 210px;
+
+
+      height: 260px;
       width: 100%;
 
       ul {
@@ -264,12 +403,13 @@ const tagClick = (id: number) => {
   }
 
   .category {
+    border:1px solid #cccccc;
     margin-top: 20px;
     height: 560px;
     width: 100%;
-    background: rgba(251, 204, 212, 0.89);
 
     .up {
+      border-bottom:1px solid #cccccc;
       width: 100%;
       height: 40px;
       display: flex;
@@ -295,12 +435,13 @@ const tagClick = (id: number) => {
   }
 
   .tag {
+    border:1px solid #cccccc;
     margin-top: 20px;
     height: 300px;
     width: 100%;
-    background: rgb(87, 63, 63);
 
     .up {
+      border-bottom:1px solid #cccccc;
       width: 100%;
       height: 40px;
       display: flex;
