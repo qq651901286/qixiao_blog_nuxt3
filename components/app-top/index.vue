@@ -159,12 +159,19 @@ onMounted(() => {
 
         li {
           margin-left: 15px;
+          //鼠标样式
           cursor:pointer;
+
+          ::v-deep(.el-link__inner){
+            font-size: 16px;
+          }
 
           &.activate {
             color: blue;
           }
         }
+
+
       }
     }
 
