@@ -27,24 +27,45 @@
           分类
         </span>
         <span class="more">
-          <el-link href="https://element-plus.org" target="_blank">
-            更多
-          </el-link>
+
         </span>
       </div>
       <!--内容区域-->
       <div class="content">
-        <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick" />
+        <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"/>
       </div>
     </div>
-    <div class="below">
-      下
+    <div class="tag">
+      <!--标签-->
+      <div class="up">
+        <span class="title">
+          标签
+        </span>
+        <span class="more">
+          <el-link default-expand-all href="https://element-plus.org" target="_blank">
+            更多
+          </el-link>
+        </span>
+      </div>
+
+      <!--内容-->
+      <div class="content">
+        <el-button
+            v-for="item in items"
+            :key="item.label"
+            :type="item.type"
+            @click="tagClick(item.id)"
+            size="small"
+        >
+          {{ item.label }}
+        </el-button>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-const blogClick = (id:number)=> {
+const blogClick = (id: number) => {
   console.log(id);
 }
 
@@ -142,6 +163,42 @@ const defaultProps = {
   label: 'label',
 }
 
+/**
+ * 标签
+ */
+type Item = {
+  type: string,
+  label: string,
+  id: number
+}
+
+
+const items = ref<Array<Item>>([
+  {type: '', label: '中间件', id: 1},
+  {type: 'success', label: 'Java', id: 2},
+  {type: 'info', label: 'PHP', id: 3},
+  {type: 'danger', label: 'Golang', id: 4},
+  {type: 'info', label: 'MySQL', id: 5},
+  {type: 'warning', label: 'Oracle', id: 6},
+  {type: 'info', label: 'Nuxt', id: 7},
+  {type: 'success', label: 'Vue', id: 8},
+  {type: 'info', label: 'Vue3', id: 9},
+  {type: 'success', label: 'Vue2', id: 10},
+  {type: 'info', label: 'VueX', id: 11},
+  {type: 'danger', label: 'RabbitMQ', id: 12},
+  {type: 'info', label: '数据库', id: 13},
+  {type: 'danger', label: 'StringBoot', id: 14},
+  {type: 'info', label: 'String', id: 15},
+  // { type: 'danger', label: '网络安全' },
+  // { type: 'info', label: 'JVM' },
+  // { type: 'success', label: 'JUC' },
+  // { type: 'info', label: '网络编程' },
+  // { type: 'success', label: 'Unity3D' },
+])
+
+const tagClick = (id: number) => {
+  console.log(id)
+}
 </script>
 
 <style scoped lang="scss">
@@ -149,6 +206,7 @@ const defaultProps = {
   display: flex;
   flex-direction: column;
   width: 100%;
+
   .new-blog {
     background: beige;
     height: 300px;
@@ -164,9 +222,11 @@ const defaultProps = {
       .title {
         margin-left: 10px;
       }
+
       .more {
         margin-right: 10px;
-        ::v-deep(.el-link__inner){
+
+        ::v-deep(.el-link__inner) {
           font-size: 16px;
         }
       }
@@ -175,6 +235,7 @@ const defaultProps = {
     .content {
       height: 210px;
       width: 100%;
+
       ul {
         li {
           height: 20px;
@@ -187,18 +248,21 @@ const defaultProps = {
           //超出宽度隐藏
           overflow: hidden;
           // 鼠标变小手
-          cursor:pointer;
+          cursor: pointer;
         }
+
         // 悬浮样式
-        li:hover{
+        li:hover {
           color: blue;
         }
+
         li:active {
           color: black;
         }
       }
     }
   }
+
   .category {
     margin-top: 20px;
     height: 560px;
@@ -215,9 +279,11 @@ const defaultProps = {
       .title {
         margin-left: 10px;
       }
+
       .more {
         margin-right: 10px;
-        ::v-deep(.el-link__inner){
+
+        ::v-deep(.el-link__inner) {
           font-size: 16px;
         }
       }
@@ -227,11 +293,41 @@ const defaultProps = {
       display: flex;
     }
   }
-  .below {
+
+  .tag {
     margin-top: 20px;
     height: 300px;
     width: 100%;
     background: rgb(87, 63, 63);
+
+    .up {
+      width: 100%;
+      height: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .title {
+        margin-left: 10px;
+      }
+
+      .more {
+        margin-right: 10px;
+
+        ::v-deep(.el-link__inner) {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+
+      ::v-deep(.el-button) {
+        margin: 5px 5px;
+      }
+    }
   }
 }
 </style>
