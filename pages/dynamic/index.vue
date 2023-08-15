@@ -1,6 +1,6 @@
 <template>
   <div>
-    关于我自己
+    动态
   </div>
 </template>
 

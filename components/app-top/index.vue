@@ -3,52 +3,51 @@
     <div class="top">
       <div class="content">
         <div class="left">
-          <img src="~/assets/img/logo.png" @click="logoClick()" />
+          <NuxtLink to="/">
+            <img src="~/assets/img/logo.png"/>
+          </NuxtLink>
           <ul>
             <li>
-              <el-link href="https://element-plus.org" target="_blank">
-                首页
-              </el-link>
+              <NuxtLink to="/">
+                <el-link>
+                  首页
+                </el-link>
+              </NuxtLink>
             </li>
             <li>
-              <el-link href="https://element-plus.org" target="_blank">
-                生活
-              </el-link>
+              <NuxtLink to="/tag">
+                <el-link>
+                  标签
+                </el-link>
+              </NuxtLink>
             </li>
             <li>
-              <el-link href="https://element-plus.org" target="_blank">
-                归档
-              </el-link>
+              <NuxtLink to="/dynamic">
+                <el-link>
+                  动态
+                </el-link>
+              </NuxtLink>
             </li>
             <li>
-              <el-link href="https://element-plus.org" target="_blank">
-                分类
-              </el-link>
+              <NuxtLink to="/photo">
+                <el-link>
+                  相册
+                </el-link>
+              </NuxtLink>
             </li>
             <li>
-              <el-link href="https://element-plus.org" target="_blank">
-                标签
-              </el-link>
+              <NuxtLink to="/friendLink">
+                <el-link>
+                  友链
+                </el-link>
+              </NuxtLink>
             </li>
             <li>
-              <el-link href="https://element-plus.org" target="_blank">
-                动态
-              </el-link>
-            </li>
-            <li>
-              <el-link href="https://element-plus.org" target="_blank">
-                相册
-              </el-link>
-            </li>
-            <li>
-              <el-link href="https://element-plus.org" target="_blank">
-                友链
-              </el-link>
-            </li>
-            <li>
-              <el-link href="https://element-plus.org" target="_blank">
-                关于
-              </el-link>
+              <NuxtLink to="/about">
+                <el-link>
+                  关于
+                </el-link>
+              </NuxtLink>
             </li>
           </ul>
         </div>
@@ -67,7 +66,6 @@
 </template>
 
 <script setup lang="ts">
-const router = useRouter();
 const searchStr = ref('')
 
 interface LinkItem {
@@ -114,13 +112,6 @@ const createFilter = (queryString: string) => {
 // 选择搜索框内容
 const handleSelect = (item: LinkItem) => {
   console.log(item)
-}
-
-// logon被单击
-const logoClick = ()=> {
-  router.push({
-    path:'/'
-  });
 }
 
 onMounted(() => {

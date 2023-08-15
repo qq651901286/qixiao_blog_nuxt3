@@ -8,8 +8,12 @@
     <!--个人信息-->
     <div class="me">
       <div v-if="isLogin" class="online">
-        <!--头像-->
-        <el-avatar size="large" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"/>
+        <div class="avatar">
+          <!--头像-->
+          <el-avatar size="large" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"/>
+          <el-button @click="offClick()" size="small" type="primary">注销</el-button>
+        </div>
+
         <!--名称-->
         <label class="name">奇小</label>
         <!--个性签名-->
@@ -123,12 +127,19 @@ const qqClick = () => {
   console.log('QQ被点击');
 }
 
+// 用户中心
 const userCenterClick = ()=> {
-  isLogin.value = false
+
 }
 
+// 登录
 const registerOrLoginClick = ()=> {
   isLogin.value = true
+}
+
+// 注销
+const offClick = ()=> {
+  isLogin.value = false
 }
 
 </script>
@@ -151,19 +162,26 @@ const registerOrLoginClick = ()=> {
     margin-top: 20px;
     height: 330px;
 
-    ::v-deep(.el-avatar), .name, .introduce,
+    .avatar, .name, .introduce,
     .addr, .data, ::v-deep(.el-button), .contact {
       margin-top: 15px;
     }
-  ;
 
     .online {
       display: flex;
       flex-direction: column;
       align-items: center;
-
-      ::v-deep(.el-avatar) {
-        margin-top: 10px;
+      .avatar {
+        width: 230px;
+        display: flex;
+        justify-content: center;
+        .el-avatar {
+          margin-left: 70px;
+        }
+        .el-button {
+          margin-left: 20px;
+          width: 50px;
+        }
       }
 
       .name {
