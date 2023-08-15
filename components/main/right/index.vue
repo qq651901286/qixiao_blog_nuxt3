@@ -31,11 +31,11 @@
             <label class="count">111</label>
           </div>
           <div class="category">
-            <label class="title">分类</label>
+            <label class="title">关注</label>
             <label class="count">20</label>
           </div>
           <div class="tag">
-            <label class="title">标签</label>
+            <label class="title">粉丝</label>
             <label class="count">15</label>
           </div>
         </div>
@@ -79,7 +79,14 @@
         </span>
       </div>
       <div class="content">
-
+        <ul>
+          <li v-for="i in 5">
+            <!--头像-->
+            <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"/>
+            <!--名称-->
+            <label class="name">奇小</label>
+          </li>
+        </ul>
       </div>
     </div>
 
@@ -92,6 +99,17 @@
         <span class="more">
           <el-button size="small" :icon="ElIconRefresh" type="primary"></el-button>
         </span>
+      </div>
+
+      <div class="content">
+        <ul>
+          <li v-for="i in 5">
+            <!--头像-->
+            <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"/>
+            <!--名称-->
+            <label class="name">奇小</label>
+          </li>
+        </ul>
       </div>
     </div>
 
@@ -250,7 +268,21 @@ const registerOrLoginClick = ()=> {
     }
     .content {
       height: 250px;
-      background: violet;
+      ul {
+        display: flex;
+        flex-direction: column;
+        li {
+          height: 50px;
+          display: flex;
+          align-items: center;
+          .el-avatar,.name {
+            margin-left: 20px;
+          }
+        }
+        li:hover {
+          background: pink;
+        }
+      }
     }
   }
 }
