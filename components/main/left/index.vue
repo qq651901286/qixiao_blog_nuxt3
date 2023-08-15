@@ -63,7 +63,7 @@
           标签
         </span>
         <span class="more">
-          <el-link default-expand-all href="https://element-plus.org" target="_blank">
+          <el-link href="https://element-plus.org" target="_blank">
             更多
           </el-link>
         </span>
