@@ -13,7 +13,7 @@
         <!--名称-->
         <label class="name">奇小</label>
         <!--个性签名-->
-        <label class="introduce">浪迹互联网世界，IT界奇小，江湖id奇小，18岁，编程经验40年。</label>
+        <el-text truncated class="introduce">浪迹互联网世界，IT界奇小，江湖id奇小，18岁，编程经验40年。</el-text>
         <!--ip地址-->
         <div class="addr">
           <svg t="1692027363157" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4100" width="16" height="16"><path d="M512 64C306.4 64 140 230.4 140 436c0 101.6 40.8 194.4 107.2 261.6L512 960l264-263.2c66.4-67.2 107.2-159.2 107.2-261.6C884 230.4 717.6 64 512 64z m128 331.2c-4.8 62.4-54.4 112-116.8 116.8-75.2 6.4-138.4-53.6-138.4-127.2 0-70.4 57.6-128 128-128 73.6 0 133.6 63.2 127.2 138.4z" p-id="4101" fill="#ffb6c1"></path></svg>
@@ -44,7 +44,8 @@
         </div>
       </div>
       <div v-else class="offline">
-        未登录
+        <label>想拥有更多的功能吗？</label>
+        <el-button type="primary">注册/登录</el-button>
       </div>
     </div>
 
@@ -63,7 +64,7 @@
 </template>
 
 <script setup lang="ts">
-const isLogin = ref<boolean>(true);
+const isLogin = ref<boolean>(false);
 
 const qqClick = ()=> {
   console.log('QQ被点击');
@@ -85,6 +86,7 @@ const qqClick = ()=> {
   }
 
   .me {
+    border:1px solid #cccccc;
     margin-top: 20px;
     height: 330px;
 
@@ -105,6 +107,7 @@ const qqClick = ()=> {
         font-size: 20px;
       }
       .introduce {
+        width: 210px;
         font-size: 12px;
         color: #4f5555;
       }
@@ -114,7 +117,7 @@ const qqClick = ()=> {
         align-items: center;
       }
       .data {
-        width: 100%;
+        width: 210px;
         display: flex;
         justify-content: space-between;
         .blog,.category,.tag {
@@ -132,10 +135,10 @@ const qqClick = ()=> {
         }
       }
       ::v-deep(.el-button) {
-        width: 100%;
+        width: 210px;
       }
       .contact {
-        width: 100%;
+        width: 210px;
         height: 40px;
         display: flex;
         justify-content: space-between;
@@ -146,6 +149,19 @@ const qqClick = ()=> {
             fill: violet;
           }
         }
+      }
+    }
+
+    .offline {
+      height: 330px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      label {
+        margin-top: 50%;
+        font-weight: bold;
+        font-size: 18px;
+        color: red;
       }
     }
   }
