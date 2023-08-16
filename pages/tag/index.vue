@@ -238,6 +238,7 @@ const currentPageSize = ref<number>(10)
 
 <style scoped lang="scss">
 .container {
+  border: 1px solid #cccccc;
   width: 720px;
   height: 1200px;
 

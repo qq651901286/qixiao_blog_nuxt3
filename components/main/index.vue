@@ -38,7 +38,6 @@
       .nuxt-page {
         width: 720px;
         height: 1200px;
-        background: #f8f8f8;
       }
       .right {
         width: 230px;
