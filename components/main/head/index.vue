@@ -20,7 +20,7 @@ watch(() => route.matched, (newVal, oldVal) => {
 .container {
   height: 40px;
   width: 720px;
-  border-bottom:1px solid #cccccc;
+  background: #f2f2f2;
   .content {
     line-height: 40px;
     height: 40px;

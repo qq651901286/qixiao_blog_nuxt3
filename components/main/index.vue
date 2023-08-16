@@ -39,7 +39,6 @@
       .centre {
         width: 720px;
         height: 1200px;
-        border:1px solid #cccccc;
       }
       .right {
         width: 230px;
