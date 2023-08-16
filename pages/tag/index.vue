@@ -191,7 +191,7 @@
       <el-pagination
           v-model:current-page="currentPage"
           v-model:page-size="currentPageSize"
-          :page-sizes="[10,50,100,200]"
+          :page-sizes="[50,100,200]"
           :small="small"
           :disabled="disabled"
           :background="background"
@@ -206,6 +206,10 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta(
+    { title: '标签' }
+)
+
 /**
  * 标签
  */
@@ -232,20 +236,19 @@ const items = ref<Array<Item>>([
 // 当前页码
 const currentPage = ref<number>(1)
 // 分页大小
-const currentPageSize = ref<number>(10)
+const currentPageSize = ref<number>(50)
 
 </script>
 
 <style scoped lang="scss">
 .container {
-  border: 1px solid #cccccc;
   width: 720px;
-  height: 1200px;
+  height: 1160px;
 
   display: flex;
   flex-direction: column;
   .content {
-    height: 1100px;
+    height: 1160px;
     .tag{
       display: flex;
       flex-wrap:wrap;
@@ -255,7 +258,7 @@ const currentPageSize = ref<number>(10)
     }
   }
   .page {
-    height: 100px;
+    height: 60px;
     display: flex;
     justify-content: center;
   }

@@ -5,7 +5,9 @@
 </template>
 
 <script setup lang="ts">
-
+definePageMeta(
+    { title: '友链' }
+)
 </script>
 
 <style scoped>

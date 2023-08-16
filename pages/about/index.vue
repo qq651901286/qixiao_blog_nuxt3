@@ -5,7 +5,9 @@
 </template>
 
 <script setup lang="ts">
-
+definePageMeta(
+    { title: '关于' }
+)
 </script>
 
 <style scoped>

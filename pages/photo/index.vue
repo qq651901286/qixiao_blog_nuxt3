@@ -5,7 +5,9 @@
 </template>
 
 <script setup lang="ts">
-
+definePageMeta(
+    { title: '相册' }
+)
 </script>
 
 <style scoped>
