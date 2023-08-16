@@ -2,16 +2,16 @@
   <div class="container">
     <div class="content">
       <ul>
-        <li class="item" v-for="item in 5">
+        <li class="item"  v-for="item in 5">
           <div class="left">
-            <el-image
-                src="https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg"
-                :zoom-rate="1.2"
-                hide-on-click-modal
-                fit="cover"
-                :preview-src-list="previewSrcList"
-            />
-
+            <NuxtLink to="/article/1">
+              <el-image
+                  src="https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg"
+                  :zoom-rate="1.2"
+                  hide-on-click-modal
+                  fit="cover"
+              />
+            </NuxtLink>
           </div>
           <div class="right">
             <div class="top">
@@ -81,9 +81,6 @@ definePageMeta(
     { title: '首页' }
 )
 
-const previewSrcList = [
-  'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
-]
 </script>
 
 <style scoped lang="scss">
@@ -96,6 +93,9 @@ const previewSrcList = [
   .content {
     height: 1100px;
     .item {
+      text-decoration: none;
+      color: #000000;
+
       margin-top: 20px;
       height: 200px;
       display: flex;
@@ -108,7 +108,7 @@ const previewSrcList = [
         }
       }
       .right {
-        background: #f2f2f2;
+        background: #f1f1f1;
         height: 200px;
         width: 520px;
         display: flex;
