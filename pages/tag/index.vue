@@ -1,147 +1,207 @@
 <template>
   <div class="container">
     <div class="content">
-      <el-button
-          v-for="item in items"
-          :key="item.label"
-          :type="item.type"
-          @click="tagClick(item.id)"
-          size="small"
-      >
-        {{ item.label }}
-      </el-button>
-      <el-button
-          v-for="item in items"
-          :key="item.label"
-          :type="item.type"
-          @click="tagClick(item.id)"
-          size="small"
-      >
-        {{ item.label }}
-      </el-button>
-      <el-button
-          v-for="item in items"
-          :key="item.label"
-          :type="item.type"
-          @click="tagClick(item.id)"
-          size="small"
-      >
-        {{ item.label }}
-      </el-button>
-      <el-button
-          v-for="item in items"
-          :key="item.label"
-          :type="item.type"
-          @click="tagClick(item.id)"
-          size="small"
-      >
-        {{ item.label }}
-      </el-button>
-      <el-button
-          v-for="item in items"
-          :key="item.label"
-          :type="item.type"
-          @click="tagClick(item.id)"
-          size="small"
-      >
-        {{ item.label }}
-      </el-button>
-      <el-button
-          v-for="item in items"
-          :key="item.label"
-          :type="item.type"
-          @click="tagClick(item.id)"
-          size="small"
-      >
-        {{ item.label }}
-      </el-button>
-      <el-button
-          v-for="item in items"
-          :key="item.label"
-          :type="item.type"
-          @click="tagClick(item.id)"
-          size="small"
-      >
-        {{ item.label }}
-      </el-button>
-      <el-button
-          v-for="item in items"
-          :key="item.label"
-          :type="item.type"
-          @click="tagClick(item.id)"
-          size="small"
-      >
-        {{ item.label }}
-      </el-button>
-      <el-button
-          v-for="item in items"
-          :key="item.label"
-          :type="item.type"
-          @click="tagClick(item.id)"
-          size="small"
-      >
-        {{ item.label }}
-      </el-button>
-      <el-button
-          v-for="item in items"
-          :key="item.label"
-          :type="item.type"
-          @click="tagClick(item.id)"
-          size="small"
-      >
-        {{ item.label }}
-      </el-button>
-      <el-button
-          v-for="item in items"
-          :key="item.label"
-          :type="item.type"
-          @click="tagClick(item.id)"
-          size="small"
-      >
-        {{ item.label }}
-      </el-button>
-      <el-button
-          v-for="item in items"
-          :key="item.label"
-          :type="item.type"
-          @click="tagClick(item.id)"
-          size="small"
-      >
-        {{ item.label }}
-      </el-button>
-      <el-button
-          v-for="item in items"
-          :key="item.label"
-          :type="item.type"
-          @click="tagClick(item.id)"
-          size="small"
-      >
-        {{ item.label }}
-      </el-button>
-      <el-button
-          v-for="item in items"
-          :key="item.label"
-          :type="item.type"
-          @click="tagClick(item.id)"
-          size="small"
-      >
-        {{ item.label }}
-      </el-button>
+
+      <div class="tag">
+        <el-button
+            v-for="item in items"
+            :key="item.label"
+            :type="item.type"
+            @click="tagClick(item.id)"
+            size="small"
+        >
+          {{ item.label }}
+        </el-button>
+        <el-button
+            v-for="item in items"
+            :key="item.label"
+            :type="item.type"
+            @click="tagClick(item.id)"
+            size="small"
+        >
+          {{ item.label }}
+        </el-button>
+        <el-button
+            v-for="item in items"
+            :key="item.label"
+            :type="item.type"
+            @click="tagClick(item.id)"
+            size="small"
+        >
+          {{ item.label }}
+        </el-button>
+        <el-button
+            v-for="item in items"
+            :key="item.label"
+            :type="item.type"
+            @click="tagClick(item.id)"
+            size="small"
+        >
+          {{ item.label }}
+        </el-button>
+        <el-button
+            v-for="item in items"
+            :key="item.label"
+            :type="item.type"
+            @click="tagClick(item.id)"
+            size="small"
+        >
+          {{ item.label }}
+        </el-button>
+        <el-button
+            v-for="item in items"
+            :key="item.label"
+            :type="item.type"
+            @click="tagClick(item.id)"
+            size="small"
+        >
+          {{ item.label }}
+        </el-button>
+        <el-button
+            v-for="item in items"
+            :key="item.label"
+            :type="item.type"
+            @click="tagClick(item.id)"
+            size="small"
+        >
+          {{ item.label }}
+        </el-button>
+        <el-button
+            v-for="item in items"
+            :key="item.label"
+            :type="item.type"
+            @click="tagClick(item.id)"
+            size="small"
+        >
+          {{ item.label }}
+        </el-button>
+        <el-button
+            v-for="item in items"
+            :key="item.label"
+            :type="item.type"
+            @click="tagClick(item.id)"
+            size="small"
+        >
+          {{ item.label }}
+        </el-button>
+        <el-button
+            v-for="item in items"
+            :key="item.label"
+            :type="item.type"
+            @click="tagClick(item.id)"
+            size="small"
+        >
+          {{ item.label }}
+        </el-button>
+        <el-button
+            v-for="item in items"
+            :key="item.label"
+            :type="item.type"
+            @click="tagClick(item.id)"
+            size="small"
+        >
+          {{ item.label }}
+        </el-button>
+        <el-button
+            v-for="item in items"
+            :key="item.label"
+            :type="item.type"
+            @click="tagClick(item.id)"
+            size="small"
+        >
+          {{ item.label }}
+        </el-button>
+        <el-button
+            v-for="item in items"
+            :key="item.label"
+            :type="item.type"
+            @click="tagClick(item.id)"
+            size="small"
+        >
+          {{ item.label }}
+        </el-button>
+        <el-button
+            v-for="item in items"
+            :key="item.label"
+            :type="item.type"
+            @click="tagClick(item.id)"
+            size="small"
+        >
+          {{ item.label }}
+        </el-button>
+        <el-button
+            v-for="item in items"
+            :key="item.label"
+            :type="item.type"
+            @click="tagClick(item.id)"
+            size="small"
+        >
+          {{ item.label }}
+        </el-button>
+        <el-button
+            v-for="item in items"
+            :key="item.label"
+            :type="item.type"
+            @click="tagClick(item.id)"
+            size="small"
+        >
+          {{ item.label }}
+        </el-button>
+        <el-button
+            v-for="item in items"
+            :key="item.label"
+            :type="item.type"
+            @click="tagClick(item.id)"
+            size="small"
+        >
+          {{ item.label }}
+        </el-button>
+        <el-button
+            v-for="item in items"
+            :key="item.label"
+            :type="item.type"
+            @click="tagClick(item.id)"
+            size="small"
+        >
+          {{ item.label }}
+        </el-button>
+        <el-button
+            v-for="item in items"
+            :key="item.label"
+            :type="item.type"
+            @click="tagClick(item.id)"
+            size="small"
+        >
+          {{ item.label }}
+        </el-button>
+        <el-button
+            v-for="item in items"
+            :key="item.label"
+            :type="item.type"
+            @click="tagClick(item.id)"
+            size="small"
+        >
+          {{ item.label }}
+        </el-button>
+      </div>
 
     </div>
 
-    <el-pagination
-        v-model:current-page="currentPage4"
-        v-model:page-size="pageSize4"
-        :page-sizes="[100, 200, 300, 400]"
-        :small="small"
-        :disabled="disabled"
-        :background="background"
-        layout="total, sizes, prev, pager, next, jumper"
-        :total="400"
-        @size-change="handleSizeChange"
-        @current-change="handleCurrentChange"
-    />
+    <div class="page">
+      <el-pagination
+          v-model:current-page="currentPage"
+          v-model:page-size="currentPageSize"
+          :page-sizes="[10,50,100,200]"
+          :small="small"
+          :disabled="disabled"
+          :background="background"
+          layout="total, sizes, prev, pager, next, jumper"
+          :total="150"
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+      />
+    </div>
+
   </div>
 </template>
 
@@ -161,31 +221,42 @@ const items = ref<Array<Item>>([
   {type: 'success', label: 'Java', id: 2},
   {type: 'info', label: 'PHP', id: 3},
   {type: 'danger', label: 'Golang', id: 4},
-  {type: 'info', label: 'MySQL', id: 5},
+  {type: 'info', label: 'MySQL/Redis', id: 5},
   {type: 'warning', label: 'Oracle', id: 6},
   {type: 'info', label: 'Nuxt', id: 7},
   {type: 'success', label: 'Vue', id: 8},
   {type: 'info', label: 'Vue3', id: 9},
   {type: 'success', label: 'Vue2', id: 10},
-  {type: 'info', label: 'VueX', id: 11},
-  {type: 'danger', label: 'RabbitMQ', id: 12},
-  {type: 'info', label: '数据库', id: 13},
-  {type: 'danger', label: 'StringBoot', id: 14},
-  {type: 'info', label: 'String', id: 15},
 ])
+
+// 当前页码
+const currentPage = ref<number>(1)
+// 分页大小
+const currentPageSize = ref<number>(10)
+
 </script>
 
 <style scoped lang="scss">
 .container {
   width: 720px;
-  height: 1100px;
-  background: #c9cbca;
+  height: 1200px;
+
+  display: flex;
+  flex-direction: column;
   .content {
-    display: flex;
-    flex-wrap:wrap;
-    .el-button {
-      margin: 10px 10px;
+    height: 1100px;
+    .tag{
+      display: flex;
+      flex-wrap:wrap;
+      .el-button {
+        margin: 10px 10px;
+      }
     }
+  }
+  .page {
+    height: 100px;
+    display: flex;
+    justify-content: center;
   }
 }
 </style>
