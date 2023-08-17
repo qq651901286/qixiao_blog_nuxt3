@@ -1,7 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
+import {createSvgIconsPlugin} from 'vite-plugin-svg-icons'
+import path from 'path'
 
 export default defineNuxtConfig({
+    vite: {
+        plugins: [
+            createSvgIconsPlugin({
+                iconDirs: [path.resolve(process.cwd(), 'assets/svg')]
+            })
+        ],
+    },
     devtools: {enabled: true},
     css: [
         // 导入reset.scss文件

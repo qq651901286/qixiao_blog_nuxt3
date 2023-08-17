@@ -13,7 +13,8 @@
     "@nuxt/devtools": "latest",
     "@types/node": "^18.17.1",
     "element-plus": "^2.3.9",
-    "nuxt": "^3.6.5"
+    "nuxt": "^3.6.5",
+    "vite-plugin-svg-icons": "^2.0.1"
   },
   "dependencies": {
     "sass": "^1.64.2"
