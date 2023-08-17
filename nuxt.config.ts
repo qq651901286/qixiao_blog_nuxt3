@@ -33,7 +33,8 @@ export default defineNuxtConfig({
         }
     },
     modules: [
-        '@element-plus/nuxt'
+        '@element-plus/nuxt',
+        '@pinia/nuxt',
     ],
     elementPlus: {
         /** Options */
