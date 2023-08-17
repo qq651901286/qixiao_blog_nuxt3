@@ -4,7 +4,8 @@
   </svg>
 </template>
 
-<script setup> import { defineProps, computed } from 'vue'
+<script setup>
+import { defineProps, computed } from 'vue'
 const props = defineProps({
   prefix: {
     type: String,
@@ -18,13 +19,19 @@ const props = defineProps({
     type: String,
     default: '#333',
   },
+  size: {
+    type: String,
+    default: '16px'
+  }
 })
+// 给图标添加上类名
 const symbolId = computed(() => `#${props.prefix}-${props.name}`)
 </script>
-<style scoped lang='scss' >
+<style scoped lang='scss'>
 .svgclass {
-  width: 1em;
-  height: 1em;
+  /* v-bind 是 Vue3 才支持的功能，可以将 CSS 的值与 js 的值绑定 */
+  width: v-bind('props.size');
+  height: v-bind('props.size');
   overflow: hidden;
   vertical-align: top;
 }
