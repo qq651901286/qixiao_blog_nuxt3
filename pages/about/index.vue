@@ -1,6 +1,6 @@
 <template>
   <div>
-    关于我自己
+    关于声明的一些东西
   </div>
 </template>
 

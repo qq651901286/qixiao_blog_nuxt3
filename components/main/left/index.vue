@@ -86,8 +86,10 @@
 </template>
 
 <script setup lang="ts">
+const router = useRouter()
 const blogClick = (id: number) => {
   console.log(id);
+  router.push(`/article/`+id)
 }
 
 
