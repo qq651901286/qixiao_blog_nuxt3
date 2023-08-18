@@ -1,13 +1,12 @@
 <template>
   <div class="container">
+    <el-image src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/myPicture/logo.png"/>
     <el-menu
         mode="horizontal"
         :ellipsis="false"
         @select="menuHandleSelect"
+        default-active="1"
     >
-      <el-menu-item @click="menuItemClick" index="0">
-        <el-image class="logo" src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/myPicture/logo.png" fit="cover"/>
-      </el-menu-item>
       <el-menu-item index="100">首页</el-menu-item>
       <el-menu-item index="101">博客</el-menu-item>
       <el-menu-item index="102">留言板</el-menu-item>
@@ -32,9 +31,15 @@
 </template>
 
 <script setup lang="ts">
+import {useSettingStore} from "~/stores/setting";
+
+const settingStore = useSettingStore()
+const hoverColor = ref<string>(settingStore.hoverColor);
 import {ref} from 'vue'
 // 路由
 const router = useRouter()
+
+
 
 interface headerData {
   // id
@@ -101,22 +106,22 @@ const headerDataList:headerData[] = reactive<headerData[]>([
     url:'/about',
     child:[]
   },
-  {
-    id:'6',
-    type:'inner',
-    showType:'title',
-    showContent:'自己',
-    url:'',
-    child:[
-      {
-        id:'7',
-        type:'share',
-        name:'Gitee',
-        url:'/about',
-        child:[]
-      },
-    ]
-  },
+  // {
+  //   id:'6',
+  //   type:'inner',
+  //   showType:'title',
+  //   showContent:'自己',
+  //   url:'',
+  //   child:[
+  //     {
+  //       id:'7',
+  //       type:'share',
+  //       name:'Gitee',
+  //       url:'/about',
+  //       child:[]
+  //     },
+  //   ]
+  // },
 ]);
 
 const activeIndex = ref('1')
@@ -141,14 +146,16 @@ onMounted(() => {
 .container {
   height: 100%;
   width: 1380px;
+  display: flex;
+  justify-content: space-between;
+
+  .el-image:hover {
+    background: v-bind(hoverColor);
+  }
 
   .el-menu {
-    height: 60px;
-
     .el-menu-item {
-      .logo {
-        height: 58px;
-      }
+
     }
   }
 }
