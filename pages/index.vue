@@ -1,6 +1,6 @@
 <template>
-    <!--<el-button @click="btnClick()">{{counter.count}}</el-button>-->
-    <!--<el-button @click="btnClick()">{{setting.hoverColor}}</el-button>-->
+    <el-button @click="btnClick()">{{counter.count}}</el-button>
+    <el-button @click="btnClick()">{{setting.hoverColor}}</el-button>
 </template>
 
 <script setup lang="ts">
