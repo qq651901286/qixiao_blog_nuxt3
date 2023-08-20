@@ -1,32 +1,33 @@
 <template>
   <div class="container">
-    <!--<el-image src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/myPicture/logo.png"/>-->
-
     <el-menu
-        mode="horizontal"
-        :ellipsis="false"
-        @select="menuHandleSelect"
-    >
-      <el-menu-item index="100">首页</el-menu-item>
-      <el-menu-item index="101">博客</el-menu-item>
-      <el-menu-item index="102">留言板</el-menu-item>
-      <el-menu-item index="103">友链</el-menu-item>
-      <el-menu-item index="1">关于</el-menu-item>
-      <el-sub-menu index="2">
-        <template #title>自己</template>
-        <el-menu-item index="2-1">Gitee</el-menu-item>
-        <el-menu-item index="2-2">Github</el-menu-item>
-        <el-menu-item index="2-3">个人经历</el-menu-item>
-        <el-menu-item index="2-4">联系方式</el-menu-item>
-        <el-sub-menu index="2-5">
-          <template #title>系统推荐</template>
-          <el-menu-item index="2-5-1">个人博客</el-menu-item>
-          <el-menu-item index="2-5-2">相亲阁</el-menu-item>
-          <el-menu-item index="2-5-3">投资分析系统</el-menu-item>
+          mode="horizontal"
+          :ellipsis="false"
+          @select="menuHandleSelect"
+      >
+        <el-menu-item index="109">
+          <img src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/logo.png"/>
+        </el-menu-item>
+        <div style="flex-grow: 1"></div>
+        <el-menu-item index="100">首页</el-menu-item>
+        <el-menu-item index="101">博客</el-menu-item>
+        <el-menu-item index="102">留言板</el-menu-item>
+        <el-menu-item index="103">友链</el-menu-item>
+        <el-menu-item index="1">关于</el-menu-item>
+        <el-sub-menu index="2">
+          <template #title>自己</template>
+          <el-menu-item index="2-1">Gitee</el-menu-item>
+          <el-menu-item index="2-2">Github</el-menu-item>
+          <el-menu-item index="2-3">个人经历</el-menu-item>
+          <el-menu-item index="2-4">联系方式</el-menu-item>
         </el-sub-menu>
-      </el-sub-menu>
-    </el-menu>
-
+        <el-sub-menu index="3">
+          <template #title>系统推荐</template>
+          <el-menu-item index="3-1">个人博客</el-menu-item>
+          <el-menu-item index="3-2">相亲阁</el-menu-item>
+          <el-menu-item index="3-3">投资分析系统</el-menu-item>
+        </el-sub-menu>
+      </el-menu>
   </div>
 </template>
 
@@ -73,5 +74,13 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .container {
+  .el-menu {
+    .el-menu-item {
+      img {
+        width: 180px;
+        height: 60px;
+      }
+    }
+  }
 }
 </style>

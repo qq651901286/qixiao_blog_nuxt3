@@ -30,7 +30,7 @@
           <el-col :span="4">
           </el-col>
           <el-col :span="16">
-            Footer
+            <!--Footer-->
           </el-col>
           <el-col :span="4">
           </el-col>
@@ -47,11 +47,7 @@
 <style scoped lang="scss">
 .container {
   .el-container {
-    .el-affix {
-      .el-header {
 
-      }
-    }
   }
 }
 </style>
