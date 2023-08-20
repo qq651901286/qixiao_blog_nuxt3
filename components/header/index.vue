@@ -78,7 +78,7 @@ onMounted(() => {
     .el-menu-item {
       img {
         width: 180px;
-        height: 60px;
+        height: 58px;
       }
     }
   }
