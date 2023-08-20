@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <el-image src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/myPicture/logo.png"/>
+    <!--<el-image src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/myPicture/logo.png"/>-->
+
     <el-menu
         mode="horizontal"
         :ellipsis="false"
@@ -39,8 +40,6 @@ import {ref} from 'vue'
 // 路由
 const router = useRouter()
 
-
-
 interface headerData {
   // id
   id: string,
@@ -56,75 +55,6 @@ interface headerData {
   child: headerData[],
 }
 
-// 头部数据
-const headerDataList:headerData[] = reactive<headerData[]>([
-  {
-    id:'1',
-    type:'inner',
-    showType:'image',
-    showContent:'https://china-qixiao.oss-cn-beijing.aliyuncs.com/myPicture/logo.png',
-    url:'/',
-    child:[]
-  },
-  {
-    id:'2',
-    type:'inner',
-    showType:'title',
-    showContent:'首页',
-    url:'/',
-    child:[]
-  },
-  {
-    id:'3',
-    type:'inner',
-    showType:'title',
-    showContent:'博客',
-    url:'/blogs',
-    child:[]
-  },
-  {
-    id:'4',
-    type:'inner',
-    showType:'title',
-    showContent:'留言板',
-    url:'/guestbook',
-    child:[]
-  },
-  {
-    id:'5',
-    type:'inner',
-    showType:'title',
-    showContent:'友链',
-    url:'/friendLink',
-    child:[]
-  },
-  {
-    id:'6',
-    type:'inner',
-    showType:'title',
-    showContent:'关于',
-    url:'/about',
-    child:[]
-  },
-  // {
-  //   id:'6',
-  //   type:'inner',
-  //   showType:'title',
-  //   showContent:'自己',
-  //   url:'',
-  //   child:[
-  //     {
-  //       id:'7',
-  //       type:'share',
-  //       name:'Gitee',
-  //       url:'/about',
-  //       child:[]
-  //     },
-  //   ]
-  // },
-]);
-
-const activeIndex = ref('1')
 const menuHandleSelect = (index: string, pathList: string[]) => {
   console.log('menuHandleSelect被单击')
   if ('0' === index) {
@@ -147,16 +77,13 @@ onMounted(() => {
   height: 100%;
   width: 1380px;
   display: flex;
-  justify-content: space-between;
-
-  .el-image:hover {
-    background: v-bind(hoverColor);
-  }
-
   .el-menu {
-    .el-menu-item {
-
+    .el-image:hover {
+      background: v-bind(hoverColor);
     }
   }
+
+
+
 }
 </style>
