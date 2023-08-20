@@ -1,42 +1,45 @@
 <template>
   <div class="container">
-    <el-container>
-      <el-affix>
-        <el-header>
-          <el-row>
-            <el-col :span="4">
-            </el-col>
-            <el-col :span="16">
-              <Header></Header>
-            </el-col>
-            <el-col :span="4">
-            </el-col>
-          </el-row>
-        </el-header>
-      </el-affix>
-      <el-main>
-        <el-row>
-          <el-col :span="4">
-          </el-col>
-          <el-col :span="16">
-            <NuxtPage></NuxtPage>
-          </el-col>
-          <el-col :span="4">
-          </el-col>
-        </el-row>
-      </el-main>
-      <el-footer>
-        <el-row>
-          <el-col :span="4">
-          </el-col>
-          <el-col :span="16">
-            <!--Footer-->
-          </el-col>
-          <el-col :span="4">
-          </el-col>
-        </el-row>
-      </el-footer>
-    </el-container>
+    <!--不能注释，否则顶部自己》系统推荐》以下内容无法显示-->
+    <el-row v-show="false">
+      <el-col :span="4">
+      </el-col>
+      <el-col :span="16">
+        <Header></Header>
+      </el-col>
+      <el-col :span="4">
+      </el-col>
+    </el-row>
+
+    <el-row>
+      <el-col :span="4">
+      </el-col>
+      <el-col :span="16">
+        <Header></Header>
+      </el-col>
+      <el-col :span="4">
+      </el-col>
+    </el-row>
+
+    <el-row>
+      <el-col :span="4">
+      </el-col>
+      <el-col :span="16">
+        <NuxtPage></NuxtPage>
+      </el-col>
+      <el-col :span="4">
+      </el-col>
+    </el-row>
+
+    <el-row>
+      <el-col :span="4">
+      </el-col>
+      <el-col :span="16">
+        <Footer></Footer>
+      </el-col>
+      <el-col :span="4">
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -46,8 +49,8 @@
 
 <style scoped lang="scss">
 .container {
-  .el-container {
-
+  .top {
+    height: 50px;
   }
 }
 </style>
