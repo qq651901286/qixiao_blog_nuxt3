@@ -3,13 +3,39 @@
     <el-container>
       <el-affix>
         <el-header>
-          <Header></Header>
+          <el-row>
+            <el-col :span="4">
+            </el-col>
+            <el-col :span="16">
+              <Header></Header>
+            </el-col>
+            <el-col :span="4">
+            </el-col>
+          </el-row>
         </el-header>
       </el-affix>
       <el-main>
-        <NuxtPage></NuxtPage>
+        <el-row>
+          <el-col :span="4">
+          </el-col>
+          <el-col :span="16">
+            <NuxtPage></NuxtPage>
+          </el-col>
+          <el-col :span="4">
+          </el-col>
+        </el-row>
       </el-main>
-      <el-footer>Footer</el-footer>
+      <el-footer>
+        <el-row>
+          <el-col :span="4">
+          </el-col>
+          <el-col :span="16">
+            Footer
+          </el-col>
+          <el-col :span="4">
+          </el-col>
+        </el-row>
+      </el-footer>
     </el-container>
   </div>
 </template>
@@ -23,8 +49,7 @@
   .el-container {
     .el-affix {
       .el-header {
-        display: flex;
-        justify-content: center;
+
       }
     }
   }

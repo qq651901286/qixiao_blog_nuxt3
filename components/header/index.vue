@@ -6,7 +6,6 @@
         mode="horizontal"
         :ellipsis="false"
         @select="menuHandleSelect"
-        default-active="1"
     >
       <el-menu-item index="100">首页</el-menu-item>
       <el-menu-item index="101">博客</el-menu-item>
@@ -74,16 +73,5 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .container {
-  height: 100%;
-  width: 1380px;
-  display: flex;
-  .el-menu {
-    .el-image:hover {
-      background: v-bind(hoverColor);
-    }
-  }
-
-
-
 }
 </style>
