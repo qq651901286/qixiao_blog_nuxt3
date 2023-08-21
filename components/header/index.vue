@@ -10,6 +10,7 @@
       <el-menu-item index="100">
         <img src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/logo.png"/>
       </el-menu-item>
+      <div style="flex-grow: 1"></div>
       <el-menu-item index="200">首页</el-menu-item>
       <el-menu-item index="300">博客</el-menu-item>
       <el-menu-item index="400">留言板</el-menu-item>
@@ -29,13 +30,13 @@
         </el-sub-menu>
       </el-sub-menu>
     </el-menu>
-    <el-autocomplete
-        v-model="searchContent"
-        :fetch-suggestions="querySearchAsync"
-        placeholder="请输入内容"
-        @select="searchSelect"
-        clearable
-    ></el-autocomplete>
+    <!--<el-autocomplete-->
+    <!--    v-model="searchContent"-->
+    <!--    :fetch-suggestions="querySearchAsync"-->
+    <!--    placeholder="请输入内容"-->
+    <!--    @select="searchSelect"-->
+    <!--    clearable-->
+    <!--&gt;</el-autocomplete>-->
   </div>
 </template>
 
@@ -116,9 +117,9 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  //display: flex;
+  //justify-content: space-between;
+  //align-items: center;
   .el-menu {
     img {
       width: 180px;
