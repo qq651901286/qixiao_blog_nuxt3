@@ -1,6 +1,19 @@
 <template>
-    <el-button @click="btnClick()">{{counter.count}}</el-button>
-    <el-button @click="btnClick()">{{setting.hoverColor}}</el-button>
+  <div class="container">
+    <div class="ad">
+      <div class="left">
+
+      </div>
+      <div class="right">
+        <div class="top">
+
+        </div>
+        <div class="bottom">
+
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -19,5 +32,21 @@ const btnClick = ()=> {
 
 <style scoped lang="scss">
 .container {
+  .ad {
+    height: 450px;
+    background: #b8a3a3;
+    display: flex;
+    justify-content: space-between;
+    .left {
+      width: 60%;
+      height: 450px;
+      background: blue;
+    }
+    .right {
+      width: 35%;
+      height: 450px;
+      background: pink;
+    }
+  }
 }
 </style>
