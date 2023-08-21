@@ -57,12 +57,25 @@ const menuItemClick = () => {
 }
 
 
-const searchContentData = ref<[]>([
-  { "value": "三全鲜食（北新泾店）", "address": "长宁区新渔路144号" },
-  { "value": "Hot honey 首尔炸鸡（仙霞路）", "address": "上海市长宁区淞虹路661号" },
-  { "value": "新旺角茶餐厅", "address": "上海市普陀区真北路988号创邑金沙谷6号楼113" },
-  { "value": "泷千家(天山西路店)", "address": "天山西路438号" },
-]);
+interface LinkItem {
+  value: string
+  link: string
+}
+// 搜索框内容
+const links = ref<LinkItem[]>([])
+
+// 搜索框数据
+const loadAll = () => {
+  return [
+    { value: 'vue', link: 'https://github.com/vuejs/vue' },
+    { value: 'element', link: 'https://github.com/ElemeFE/element' },
+    { value: 'cooking', link: 'https://github.com/ElemeFE/cooking' },
+    { value: 'mint-ui', link: 'https://github.com/ElemeFE/mint-ui' },
+    { value: 'vuex', link: 'https://github.com/vuejs/vuex' },
+    { value: 'vue-router', link: 'https://github.com/vuejs/vue-router' },
+    { value: 'babel', link: 'https://github.com/babel/babel' },
+  ]
+}
 
 // 搜索内容
 const searchContent:string = ref<string>('');
@@ -72,15 +85,30 @@ const searchSelect = (item)=> {
   console.log(item)
 }
 
-// 输入内容进行搜索
-const querySearchAsync = (queryString, cb) => {
-  console.log(queryString)
-  console.log(searchContentData)
-  cb(searchContentData);
+let timeout: NodeJS.Timeout
+// 返回搜索框数据
+const querySearchAsync = (queryString: string, cb: (arg: any) => void) => {
+  const results = queryString
+      ? links.value.filter(createFilter(queryString))
+      : links.value
+
+  clearTimeout(timeout)
+  timeout = setTimeout(() => {
+    cb(results)
+  }, 100 * Math.random())
+}
+// 过滤搜索框
+const createFilter = (queryString: string) => {
+  return (restaurant: LinkItem) => {
+    return (
+        restaurant.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0
+    )
+  }
 }
 
 onMounted(() => {
-
+  // 加载搜索数据
+  links.value = loadAll()
 })
 
 
