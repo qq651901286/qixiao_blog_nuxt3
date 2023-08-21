@@ -42,26 +42,8 @@ import {ref} from 'vue'
 // 路由
 const router = useRouter()
 
-interface headerData {
-  // id
-  id: string,
-  // inner：内部跳转   share：外部跳转
-  type: string,
-  // 显示的类型
-  showType: string,
-  // 显示的名称
-  showContent: string,
-  // 跳转路径
-  url: string,
-  // 子节点
-  child: headerData[],
-}
-
 const menuHandleSelect = (index: string, pathList: string[]) => {
   console.log('menuHandleSelect被单击')
-  if ('0' === index) {
-    router.push('/')
-  }
 }
 
 const menuItemClick = () => {

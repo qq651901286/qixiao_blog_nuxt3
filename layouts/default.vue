@@ -49,8 +49,6 @@
 
 <style scoped lang="scss">
 .container {
-  .top {
-    height: 50px;
-  }
+
 }
 </style>
