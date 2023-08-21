@@ -78,10 +78,10 @@ const loadAll = () => {
 }
 
 // 搜索内容
-const searchContent:string = ref<string>('');
+const searchContent = ref('');
 
 // 搜索内容被选择
-const searchSelect = (item)=> {
+const searchSelect = (item: any)=> {
   console.log(item)
 }
 
