@@ -29,23 +29,9 @@
       <!--分类-->
       <div class="category">
         <el-card shadow="never">
-          <el-row>
-            <el-col :span="24">
-              分类：
-            </el-col>
-          </el-row>
-
-          <el-row>
-            <el-col :span="24">
-              <el-breadcrumb separator="/">
-                <el-breadcrumb-item>计算机硬件</el-breadcrumb-item>
-                <el-breadcrumb-item>内存条</el-breadcrumb-item>
-                <el-breadcrumb-item>硬盘</el-breadcrumb-item>
-                <el-breadcrumb-item>键盘</el-breadcrumb-item>
-                <el-breadcrumb-item>鼠标</el-breadcrumb-item>
-              </el-breadcrumb>
-            </el-col>
-          </el-row>
+          <el-space wrap>
+            <el-link :underline="false" v-for="i in 100">后端</el-link>
+          </el-space>
 
         </el-card>
       </div>
@@ -103,8 +89,9 @@ const btnClick = ()=> {
     }
 
     .category {
-      .el-row {
-        margin-top: 20px;
+      .el-card {
+        .el-link {
+        }
       }
     }
   }
