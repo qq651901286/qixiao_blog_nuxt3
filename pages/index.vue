@@ -30,6 +30,10 @@
         </el-row>
       </el-col>
     </el-row>
+
+    <el-card class="content">
+
+    </el-card>
   </div>
 </template>
 
@@ -69,6 +73,14 @@ const btnClick = ()=> {
           }
         }
       }
+    }
+  }
+
+  .el-card {
+    &.content {
+      margin-top: 20px;
+
+
     }
   }
 }
