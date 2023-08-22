@@ -26,10 +26,29 @@
         </div>
       </div>
 
+      <!--分类-->
+      <div class="category">
+        <el-card shadow="never">
+          <el-row>
+            <el-col :span="24">
+              分类：
+            </el-col>
+          </el-row>
 
-      <el-card>
+          <el-row>
+            <el-col :span="24">
+              <el-breadcrumb separator="/">
+                <el-breadcrumb-item>计算机硬件</el-breadcrumb-item>
+                <el-breadcrumb-item>内存条</el-breadcrumb-item>
+                <el-breadcrumb-item>硬盘</el-breadcrumb-item>
+                <el-breadcrumb-item>键盘</el-breadcrumb-item>
+                <el-breadcrumb-item>鼠标</el-breadcrumb-item>
+              </el-breadcrumb>
+            </el-col>
+          </el-row>
 
-      </el-card>
+        </el-card>
+      </div>
     </div>
   </div>
 </template>
@@ -70,6 +89,8 @@ const btnClick = ()=> {
         display: flex;
         flex-direction: column;
         .top,.bottom {
+          width: 390px;
+          height: 240px;
           .el-image {
             width: 390px;
             height: 240px;
@@ -78,6 +99,12 @@ const btnClick = ()=> {
         .bottom {
           margin-top: 20px;
         }
+      }
+    }
+
+    .category {
+      .el-row {
+        margin-top: 20px;
       }
     }
   }
