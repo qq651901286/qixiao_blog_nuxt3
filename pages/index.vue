@@ -2,35 +2,30 @@
   <div class="container">
     <div class="content">
       <!--广告区域-->
-      <el-row class="ad" :gutter="20">
-        <el-col :span="16">
+      <div class="ad">
+        <div class="left">
           <el-carousel height="500px" :interval="5000">
             <el-carousel-item>
-              <el-image fit="fill" src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/3.jpg" alt="" />
+              <el-image src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/5.jpg" alt="" />
             </el-carousel-item>
             <el-carousel-item>
-              <el-image fit="fill" src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/4.jpg" alt="" />
+              <el-image src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/4.jpg" alt="" />
             </el-carousel-item>
             <el-carousel-item>
-              <el-image fit="fill" src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/5.jpg" alt=""/>
+              <el-image src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/3.jpg" alt="" />
             </el-carousel-item>
           </el-carousel>
-        </el-col>
-        <el-col :span="8">
+        </div>
+        <div class="right">
+          <div class="top">
+            <el-image  src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/4.jpg" alt=""/>
+          </div>
+          <div class="bottom">
+            <el-image  src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/4.jpg" alt=""/>
+          </div>
+        </div>
+      </div>
 
-          <el-row>
-            <el-image fit="fill" src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/5.jpg" alt=""/>
-          </el-row>
-
-          <el-row>
-            <div></div>
-          </el-row>
-
-          <el-row>
-            <el-image fit="fill" src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/4.jpg" alt="" />
-          </el-row>
-        </el-col>
-      </el-row>
 
       <el-card>
 
@@ -55,34 +50,35 @@ const btnClick = ()=> {
 
 <style scoped lang="scss">
 .container {
-  .el-row {
-    &.ad {
-      max-height: 500px;
-      min-height: 500px;
-      .el-col {
-        .el-carousel {
-          .el-image {
-            width: 100%;
-            height: 100%;
-          }
-        }
-        .el-row {
-          .el-image {
-            height: 240px;
-          }
-          div {
-            height: 20px;
-          }
+  display: flex;
+  justify-content: center;
+  .content {
+    width: 1200px;
+    .ad {
+      height: 500px;
+      display: flex;
+      .left {
+        width: 790px;
+        .el-image {
+          width: 790px;
+          height: 500px;
         }
       }
-    }
-  }
-
-  .el-card {
-    &.content {
-      margin-top: 20px;
-
-
+      .right {
+        margin-left: 20px;
+        width: 390px;
+        display: flex;
+        flex-direction: column;
+        .top,.bottom {
+          .el-image {
+            width: 390px;
+            height: 240px;
+          }
+        }
+        .bottom {
+          margin-top: 20px;
+        }
+      }
     }
   }
 }
