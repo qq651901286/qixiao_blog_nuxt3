@@ -1,39 +1,41 @@
 <template>
   <div class="container">
-    <!--广告区域-->
-    <el-row class="ad" :gutter="20">
-      <el-col :span="16">
-        <el-carousel height="500px" :interval="5000">
-          <el-carousel-item>
-            <el-image fit="fill" src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/3.jpg" alt="" />
-          </el-carousel-item>
-          <el-carousel-item>
-            <el-image fit="fill" src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/4.jpg" alt="" />
-          </el-carousel-item>
-          <el-carousel-item>
+    <div class="content">
+      <!--广告区域-->
+      <el-row class="ad" :gutter="20">
+        <el-col :span="16">
+          <el-carousel height="500px" :interval="5000">
+            <el-carousel-item>
+              <el-image fit="fill" src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/3.jpg" alt="" />
+            </el-carousel-item>
+            <el-carousel-item>
+              <el-image fit="fill" src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/4.jpg" alt="" />
+            </el-carousel-item>
+            <el-carousel-item>
+              <el-image fit="fill" src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/5.jpg" alt=""/>
+            </el-carousel-item>
+          </el-carousel>
+        </el-col>
+        <el-col :span="8">
+
+          <el-row>
             <el-image fit="fill" src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/5.jpg" alt=""/>
-          </el-carousel-item>
-        </el-carousel>
-      </el-col>
-      <el-col :span="8">
+          </el-row>
 
-        <el-row>
-          <el-image fit="fill" src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/5.jpg" alt=""/>
-        </el-row>
+          <el-row>
+            <div></div>
+          </el-row>
 
-        <el-row>
-          <div></div>
-        </el-row>
+          <el-row>
+            <el-image fit="fill" src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/4.jpg" alt="" />
+          </el-row>
+        </el-col>
+      </el-row>
 
-        <el-row>
-          <el-image fit="fill" src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/4.jpg" alt="" />
-        </el-row>
-      </el-col>
-    </el-row>
+      <el-card>
 
-    <el-card class="content">
-
-    </el-card>
+      </el-card>
+    </div>
   </div>
 </template>
 
