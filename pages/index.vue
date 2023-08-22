@@ -1,18 +1,35 @@
 <template>
   <div class="container">
-    <div class="ad">
-      <div class="left">
+    <!--广告区域-->
+    <el-row class="ad" :gutter="20">
+      <el-col :span="16">
+        <el-carousel height="500px" :interval="5000">
+          <el-carousel-item>
+            <el-image fit="fill" src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/3.jpg" alt="" />
+          </el-carousel-item>
+          <el-carousel-item>
+            <el-image fit="fill" src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/4.jpg" alt="" />
+          </el-carousel-item>
+          <el-carousel-item>
+            <el-image fit="fill" src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/5.jpg" alt=""/>
+          </el-carousel-item>
+        </el-carousel>
+      </el-col>
+      <el-col :span="8">
 
-      </div>
-      <div class="right">
-        <div class="top">
+        <el-row>
+          <el-image fit="fill" src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/5.jpg" alt=""/>
+        </el-row>
 
-        </div>
-        <div class="bottom">
+        <el-row>
+          <div></div>
+        </el-row>
 
-        </div>
-      </div>
-    </div>
+        <el-row>
+          <el-image fit="fill" src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/4.jpg" alt="" />
+        </el-row>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -32,20 +49,26 @@ const btnClick = ()=> {
 
 <style scoped lang="scss">
 .container {
-  .ad {
-    height: 450px;
-    background: #b8a3a3;
-    display: flex;
-    justify-content: space-between;
-    .left {
-      width: 60%;
-      height: 450px;
-      background: blue;
-    }
-    .right {
-      width: 35%;
-      height: 450px;
-      background: pink;
+  .el-row {
+    &.ad {
+      max-height: 500px;
+      min-height: 500px;
+      .el-col {
+        .el-carousel {
+          .el-image {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .el-row {
+          .el-image {
+            height: 240px;
+          }
+          div {
+            height: 20px;
+          }
+        }
+      }
     }
   }
 }
