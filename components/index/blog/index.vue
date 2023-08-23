@@ -2,7 +2,25 @@
   <div class="container">
     <div class="content">
       <div class="left">
-        左边
+        <el-card shadow="never">
+          <el-row>
+            <el-col :span="6">
+              <el-image class="cover" fit="fill" src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/5.jpg" alt=""/>
+            </el-col>
+            <el-col :span="18">
+              <div class="title">
+                <el-text truncated>【算法系列篇】二分查找——这还是你所知道的二分查找算法吗？</el-text>
+              </div>
+              <div class="content">
+                在生活中，我们往往会遇到在数组中查找某个确定的元素的时候，通常我们会选择使用暴力解法，
+                这样虽然简单，但是时间复杂度是O(N)，时间效率比较低。那么是否有方法可以使得在具有二段性的数组中找
+                某一特定的元素的时间复杂度低于0(N)呢？答案是肯定的，当我们可以将数组分为两个部分的时候，
+                也就是数组具有二段性的时候，可以使用二分查找的算法来进行高效的查找。通常二分查找的时间复杂度为O(logN)。
+                那么这篇文章我将为大家分享关于二分查找的知识。
+              </div>
+            </el-col>
+          </el-row>
+        </el-card>
       </div>
       <div class="right">
         <el-card shadow="never">
@@ -56,6 +74,22 @@
     justify-content: space-between;
     .left {
       width: 790px;
+      .el-card {
+        .el-row {
+          .el-col{
+            height: 120px;
+            .cover {
+              width: 100%;
+              height: 100%;
+            }
+            .title {
+              .el-text {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
     }
     .right {
       width: 390px;
