@@ -40,6 +40,11 @@
           </el-tabs>
         </el-card>
       </div>
+
+      <!--博客区域-->
+      <div class="blog">
+        <IndexBlog></IndexBlog>
+      </div>
     </div>
   </div>
 </template>
@@ -244,6 +249,10 @@ onMounted(() => {
     .category {
       .el-card {
       }
+    }
+
+    .blog {
+      margin-top: 20px;
     }
   }
 }
