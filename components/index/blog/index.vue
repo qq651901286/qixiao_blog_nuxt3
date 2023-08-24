@@ -40,8 +40,8 @@
         <!--分页-->
         <div class="pagination">
           <el-pagination
-              :current-page="pageNo"
-              :page-size="pageSize"
+              v-model:current-page="pageNo"
+              v-model:page-size="pageSize"
               :page-sizes="[10, 20, 50, 100]"
               layout="total, sizes, prev, pager, next, jumper"
               :total="queryData.total"
@@ -96,8 +96,6 @@ const queryData = ref({
   pageSize: 10,
   total: 2023,
 });
-const pageNo = ref(2);
-const pageSize = ref(10)
 
 const handleSizeChange = (val: number) => {
   console.log(queryData.value)
