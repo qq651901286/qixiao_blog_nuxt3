@@ -142,7 +142,6 @@
     .right {
       width: 390px;
       .el-card {
-        height: 160px;
         .base-info {
           display: flex;
           justify-content: center;
