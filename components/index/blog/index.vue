@@ -2,7 +2,7 @@
   <div class="container">
     <div class="content">
       <div class="left">
-        <el-card shadow="never">
+        <el-card class="blog" v-for="i in 5" shadow="never">
           <el-row>
             <el-col :span="6">
               <el-image class="cover" fit="fill" src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/5.jpg" alt=""/>
@@ -23,6 +23,15 @@
                   定时器实操、防抖(debounce)】(十六)
                   定时器实操、防抖(debounce)】(十六)
                 </label>
+              </div>
+
+              <div class="bottom">
+                <div class="left">
+                  <el-button size="small" type="primary">Java</el-button>
+                </div>
+                <div class="right">
+                  发布时间：2023年8月24日22:56:00
+                </div>
               </div>
             </el-col>
           </el-row>
@@ -81,6 +90,7 @@
     .left {
       width: 790px;
       .el-card {
+        margin-bottom: 10px;
         .el-row {
           .el-col{
             height: 120px;
@@ -110,37 +120,55 @@
                 -webkit-box-orient: vertical;
               }
             }
+            .bottom {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              margin-top: 10px;
+              .left {
+                width: 50%;
+                .el-button {
+                  margin-left: 10px;
+                }
+              }
+              .right {
+                width: 50%;
+              }
+            }
           }
         }
       }
     }
     .right {
       width: 390px;
-      .base-info {
-        display: flex;
-        justify-content: center;
-        .avatar {
-          .el-avatar {
-            width: 60px;
-            height: 60px;
-          }
-        }
-        .name {
-          margin-left: 20px;
+      .el-card {
+        height: 160px;
+        .base-info {
           display: flex;
           justify-content: center;
-          .el-link {
-            font-size: 20px;
+          .avatar {
+            .el-avatar {
+              width: 60px;
+              height: 60px;
+            }
+          }
+          .name {
+            margin-left: 20px;
+            display: flex;
+            justify-content: center;
+            .el-link {
+              font-size: 20px;
+            }
           }
         }
-      }
 
-      .contact {
-        margin-top: 20px;
-        display: flex;
-        justify-content: space-between;
-        svg:hover {
-          fill: #409eff;
+        .contact {
+          margin-top: 20px;
+          display: flex;
+          justify-content: space-between;
+          svg:hover {
+            fill: #409eff;
+          }
         }
       }
     }
