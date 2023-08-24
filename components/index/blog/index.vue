@@ -36,6 +36,19 @@
             </el-col>
           </el-row>
         </el-card>
+
+        <!--分页-->
+        <div class="pagination">
+          <el-pagination
+              :current-page="pageNo"
+              :page-size="pageSize"
+              :page-sizes="[10, 20, 50, 100]"
+              layout="total, sizes, prev, pager, next, jumper"
+              :total="queryData.total"
+              @size-change="handleSizeChange"
+              @current-change="handleCurrentChange"
+          />
+        </div>
       </div>
       <div class="right">
         <el-card shadow="never">
@@ -78,7 +91,20 @@
 </template>
 
 <script setup lang="ts">
+const queryData = ref({
+  pageNo: 1,
+  pageSize: 10,
+  total: 2023,
+});
+const pageNo = ref(2);
+const pageSize = ref(10)
 
+const handleSizeChange = (val: number) => {
+  console.log(queryData.value)
+}
+const handleCurrentChange = (val: number) => {
+  console.log(queryData.value)
+}
 </script>
 
 <style scoped lang="scss">
@@ -90,7 +116,7 @@
     .left {
       width: 790px;
       .el-card {
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         .el-row {
           .el-col{
             height: 120px;
@@ -137,6 +163,11 @@
             }
           }
         }
+      }
+      .pagination {
+        width: 100%;
+        display: flex;
+        justify-content: center;
       }
     }
     .right {
