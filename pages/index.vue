@@ -28,17 +28,8 @@
 
       <!--分类-->
       <div class="category">
-        <el-card shadow="never">
-          <el-tabs tab-position="left" @tab-click="categoryClick">
-            <el-tab-pane :key="item.id" :label="item.name" v-for="item in categoryList">
-              <el-space wrap>
-                <el-check-tag v-for="tag in item.tagList" :checked="tag.isChoice" @change="tagClick(tag)">
-                  {{ tag.name  }}
-                </el-check-tag>
-              </el-space>
-            </el-tab-pane>
-          </el-tabs>
-        </el-card>
+        <el-cascader-panel :clearCheckedNodes="clearCheckedNodes" :options="categoryList" :props="categoryPanelProps"/>
+
       </div>
 
       <!--博客区域-->
@@ -62,26 +53,15 @@ const btnClick = () => {
   counter.increment()
 }
 
-interface Tag {
-  // id：'1'
-  id: string,
-  // 标题：python,java
-  name: string,
-  // 选择状态
-  isChoice:false,
-}
-
 interface Category {
   // id：'1'
   id: string,
   // 名称：后端
   name: string,
-  // 标签
-  tagList: Tag[],
-}
-const checked = ref(false)
-const onChange = (status: boolean) => {
-  checked.value = status
+  // 父分类id
+  pid: string,
+  // 该分类下的子分类
+  children: Category[],
 }
 
 // 分类数据
@@ -95,115 +75,240 @@ const categoryClick = (pane,ev)=> {
   // 刷新页面
 }
 
-// 标签被点击
-const tagClick = (tag:Tag)=> {
-  tag.isChoice = !tag.isChoice
-
-  // 刷新列表
+const categoryPanelProps = {
+  // 次级菜单的展开方式 'click' | 'hover'
+  expandTrigger: 'hover',
+  // 是否多选
+  multiple: true,
+  // 指定选项的子选项为选项对象的某个属性值
+  children:'children',
+  // 指定选项的值为选项对象的某个属性值
+  value:'id',
+  // 指定选项的值为选项对象的某个属性值
+  label:'name',
 }
 
 onMounted(() => {
   categoryList.value = [
     {
-      id:'1',
-      name:'编程语言',
-      tagList:[
+      id: '100',
+      name: '编程语言',
+      pid: '',
+      children: [
         {
-          id:'1',
-          name:'Java',
-          isChoice:false,
+          id: '110',
+          name: 'Java',
+          pid: '100',
+          children: [
+            {
+              id: '111',
+              name: 'Java',
+              pid: '110',
+            },
+            {
+              id: '121',
+              name: 'Python',
+              pid: '110',
+            },
+            {
+              id: '131',
+              name: 'Python',
+              pid: '110',
+            },
+            {
+              id: '141',
+              name: 'PHP',
+              pid: '110',
+            },
+            {
+              id: '151',
+              name: 'C#',
+              pid: '110',
+            },
+          ]
         },
         {
-          id:'2',
-          name:'Python',
-          isChoice:false,
+          id: '120',
+          name: 'Python',
+          pid: '100',
         },
         {
-          id:'5',
-          name:'Python',
-          isChoice:false,
+          id: '130',
+          name: 'Python',
+          pid: '100',
+          children: [
+            {
+              id: '131',
+              name: 'Java',
+              pid: '130',
+            },
+            {
+              id: '132',
+              name: 'Python',
+              pid: '130',
+            },
+            {
+              id: '133',
+              name: 'Python',
+              pid: '130',
+            },
+            {
+              id: '134',
+              name: 'PHP',
+              pid: '130',
+            },
+            {
+              id: '135',
+              name: 'C#',
+              pid: '130',
+            },
+          ]
         },
         {
-          id:'3',
-          name:'PHP',
-          isChoice:false,
+          id: '140',
+          name: 'PHP',
+          pid: '100',
         },
         {
-          id:'4',
-          name:'C#',
-          isChoice:false,
+          id: '150',
+          name: 'C#',
+          pid: '100',
+        },
+        {
+          id: '150',
+          name: 'C#',
+          pid: '100',
+        },
+        {
+          id: '150',
+          name: 'C#',
+          pid: '100',
+        },
+        {
+          id: '150',
+          name: 'C#',
+          pid: '100',
+        },
+        {
+          id: '150',
+          name: 'C#',
+          pid: '100',
+        },
+        {
+          id: '150',
+          name: 'C#',
+          pid: '100',
         },
       ]
     },
     {
-      id:'2',
-      name:'Java',
-      tagList:[
+      id: '100',
+      name: '编程语言',
+      pid: '',
+      children: [
         {
-          id:'1',
-          name:'java',
-          isChoice:false,
+          id: '110',
+          name: 'Java',
+          pid: '100',
+          children: [
+            {
+              id: '111',
+              name: 'Java',
+              pid: '110',
+            },
+            {
+              id: '121',
+              name: 'Python',
+              pid: '110',
+            },
+            {
+              id: '131',
+              name: 'Python',
+              pid: '110',
+            },
+            {
+              id: '141',
+              name: 'PHP',
+              pid: '110',
+            },
+            {
+              id: '151',
+              name: 'C#',
+              pid: '110',
+            },
+          ]
         },
         {
-          id:'2',
-          name:'tomcat',
-          isChoice:false,
+          id: '120',
+          name: 'Python',
+          pid: '100',
         },
         {
-          id:'3',
-          name:'jvm',
-          isChoice:false,
+          id: '130',
+          name: 'Python',
+          pid: '100',
+          children: [
+            {
+              id: '131',
+              name: 'Java',
+              pid: '130',
+            },
+            {
+              id: '132',
+              name: 'Python',
+              pid: '130',
+            },
+            {
+              id: '133',
+              name: 'Python',
+              pid: '130',
+            },
+            {
+              id: '134',
+              name: 'PHP',
+              pid: '130',
+            },
+            {
+              id: '135',
+              name: 'C#',
+              pid: '130',
+            },
+          ]
         },
         {
-          id:'4',
-          name:'StringBoot',
-          isChoice:false,
+          id: '140',
+          name: 'PHP',
+          pid: '100',
         },
         {
-          id:'5',
-          name:'StringCloud',
-          isChoice:false,
+          id: '150',
+          name: 'C#',
+          pid: '100',
         },
         {
-          id:'6',
-          name:'String',
-          isChoice:false,
-        },
-      ]
-    },
-    {
-      id:'3',
-      name:'Unity3D',
-      tagList:[
-        {
-          id:'1',
-          name:'建模',
-          isChoice:false,
+          id: '150',
+          name: 'C#',
+          pid: '100',
         },
         {
-          id:'2',
-          name:'材质',
-          isChoice:false,
+          id: '150',
+          name: 'C#',
+          pid: '100',
         },
         {
-          id:'3',
-          name:'C#',
-          isChoice:false,
+          id: '150',
+          name: 'C#',
+          pid: '100',
         },
         {
-          id:'4',
-          name:'游戏开发',
-          isChoice:false,
+          id: '150',
+          name: 'C#',
+          pid: '100',
         },
         {
-          id:'5',
-          name:'王者荣耀',
-          isChoice:false,
-        },
-        {
-          id:'6',
-          name:'3D游戏',
-          isChoice:false,
+          id: '150',
+          name: 'C#',
+          pid: '100',
         },
       ]
     },
@@ -247,8 +352,7 @@ onMounted(() => {
     }
 
     .category {
-      .el-card {
-      }
+      margin-top: 20px;
     }
 
     .blog {
