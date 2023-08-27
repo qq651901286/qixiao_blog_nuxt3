@@ -8,7 +8,7 @@
               <el-image class="cover" fit="fill" src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/ad/5.jpg" alt=""/>
             </el-col>
             <el-col :span="18">
-              <div class="title">
+              <div class="title" @click="titleClick(i)">
                 <el-text truncated>
                   【算法系列篇】二分查找——这还是你所知道的二分查找算法吗？
                 </el-text>
@@ -91,6 +91,8 @@
 </template>
 
 <script setup lang="ts">
+const router = useRouter()
+
 const queryData = ref({
   pageNo: 1,
   pageSize: 10,
@@ -103,6 +105,12 @@ const handleSizeChange = (val: number) => {
 const handleCurrentChange = (val: number) => {
   console.log(queryData.value)
 }
+
+// 博客标题被点击
+const titleClick = (id:any) => {
+  router.push('/blog/'+ id)
+}
+
 </script>
 
 <style scoped lang="scss">
