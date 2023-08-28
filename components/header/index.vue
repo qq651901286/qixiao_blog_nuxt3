@@ -8,7 +8,7 @@
               class="el-menu-demo"
               mode="horizontal"
               :ellipsis="false"
-              @select="handleSelect"
+              @select="menuHandleSelect"
           >
             <el-menu-item index="100">
               <img src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/logo.png"/>
