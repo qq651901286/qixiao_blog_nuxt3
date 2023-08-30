@@ -1,63 +1,50 @@
-# Nuxt 3 Minimal Starter
+# 项目介绍
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+<img src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/logo.png" style="zoom:25%;" />这是一个博客系统，主要是记录个人的一些东西，感觉没啥可看的，主要是记录
+自己学过的知识
 
-## Setup
+## 技术栈
+- Nuxt3
+- Vue3
+- pinia
+- sass
+- element-plus
 
-Make sure to install the dependencies:
+## 演示地址
 
-```bash
-# npm
-npm install
+http://139.159.227.116:3000/
 
-# pnpm
+# 项目文档
+
+## 项目运行
+
+```cmd
 pnpm install
 
-# yarn
-yarn install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
 pnpm run dev
 
-# yarn
-yarn dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
+打包
 pnpm run build
-
-# yarn
-yarn build
+注意打包之后运行，需要将node_modules/@popperjs复制到.output/server/node_modules里面去，不然没办法运行
+可以使用node，也可以使用pm2
 ```
 
-Locally preview production build:
 
-```bash
-# npm
-npm run preview
+# 作者
 
-# pnpm
-pnpm run preview
+<img src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/myPicture/qq.jpg" style="zoom:50%;" />
 
-# yarn
-yarn preview
-```
+# 打赏
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+<img src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/myPicture/wechat.jpg" style="zoom:50%;" />
+
+<img src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/myPicture/alipay.jpg" alt=" " style="zoom:50%;" />
+
+
+
+
+
+
+
+
+
