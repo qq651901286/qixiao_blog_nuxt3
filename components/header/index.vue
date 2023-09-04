@@ -86,9 +86,6 @@ const menuHandleSelect = (index: string, pathList: string[]) => {
     // 跳到首页
     router.push('/')
   }
-
-  console.log(index)
-  console.log(pathList)
 }
 
 interface LinkItem {
