@@ -326,8 +326,10 @@ watch(
     (newValue, oldValue) => {
       let categoryId: any = newValue.categoryId
       if (categoryId == null || '' === categoryId) {
-
+        // 清空分类
+        categoryValue.value = []
       } else {
+        // 设置分类信息
         categoryValue.value = getCategoryValueByCategoryId(categoryId)
       }
       getDataInfo()

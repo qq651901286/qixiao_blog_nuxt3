@@ -14,7 +14,7 @@
               <img src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/logo.png"/>
             </el-menu-item>
             <el-menu-item index="200">首页</el-menu-item>
-            <el-menu-item index="300">博客</el-menu-item>
+            <!--<el-menu-item index="300">博客</el-menu-item>-->
             <el-menu-item index="400">留言板</el-menu-item>
             <el-menu-item index="500">友链</el-menu-item>
             <el-menu-item index="600">关于</el-menu-item>
@@ -55,8 +55,8 @@
               <el-sub-menu index="700-5">
                 <template #title>系统推荐</template>
                 <el-menu-item index="700-5-1">个人博客</el-menu-item>
-                <el-menu-item index="700-5-2">相亲阁</el-menu-item>
-                <el-menu-item index="700-5-3">投资分析系统</el-menu-item>
+                <!--<el-menu-item index="700-5-2">相亲阁</el-menu-item>-->
+                <!--<el-menu-item index="700-5-3">投资分析系统</el-menu-item>-->
               </el-sub-menu>
             </el-sub-menu>
           </el-menu>
@@ -79,12 +79,133 @@
 // 路由
 const router = useRouter()
 
+// 菜单数据，后期会从后端进行拿到渲染
+const menuDataMap = new Map(
+    [
+      [
+          '100',
+        {
+          // 内部链接：internalLink，外部链接：externalLink
+          'type':'internalLink',
+          // 跳转的链接
+          'url':'/',
+          // 名称
+          'name':'logo',
+        }
+      ],
+      [
+        '200',
+        {
+          // 内部链接：internalLink，外部链接：externalLink
+          'type':'internalLink',
+          // 跳转的链接
+          'url':'/',
+          // 名称
+          'name':'首页',
+        }
+      ],
+      [
+        '400',
+        {
+          // 内部链接：internalLink，外部链接：externalLink
+          'type':'internalLink',
+          // 跳转的链接
+          'url':'/messageBoard',
+          // 名称
+          'name':'留言板',
+        }
+      ],
+      [
+        '500',
+        {
+          // 内部链接：internalLink，外部链接：externalLink
+          'type':'internalLink',
+          // 跳转的链接
+          'url':'/friendLink',
+          // 名称
+          'name':'友链',
+        }
+      ],
+      [
+        '600',
+        {
+          // 内部链接：internalLink，外部链接：externalLink
+          'type':'internalLink',
+          // 跳转的链接
+          'url':'/about',
+          // 名称
+          'name':'关于',
+        }
+      ],
+      [
+        '700-1',
+        {
+          // 内部链接：internalLink，外部链接：externalLink
+          'type':'externalLink',
+          // 跳转的链接
+          'url':'https://gitee.com/qq651901286',
+          // 名称
+          'name':'Gitee',
+        }
+      ],
+      [
+        '700-2',
+        {
+          // 内部链接：internalLink，外部链接：externalLink
+          'type':'externalLink',
+          // 跳转的链接
+          'url':'https://github.com/qq651901286',
+          // 名称
+          'name':'Github',
+        }
+      ],
+      [
+        '700-3',
+        {
+          // 内部链接：internalLink，外部链接：externalLink
+          'type':'internalLink',
+          // 跳转的链接
+          'url':'/oneself/experience',
+          // 名称
+          'name':'个人经历',
+        }
+      ],
+      [
+        '700-4',
+        {
+          // 内部链接：internalLink，外部链接：externalLink
+          'type':'internalLink',
+          // 跳转的链接
+          'url':'/oneself/contactInformation',
+          // 名称
+          'name':'个人经历',
+        }
+      ],
+      [
+        '700-5-1',
+        {
+          // 内部链接：internalLink，外部链接：externalLink
+          'type':'externalLink',
+          // 跳转的链接
+          'url':'https://gitee.com/qq651901286/qixiao_blog_nuxt3',
+          // 名称
+          'name':'个人博客',
+        }
+      ],
+    ],
+)
+
 // 菜单被点击
 const menuHandleSelect = (index: string, pathList: string[]) => {
-  if ('100' === index || '200' === index){
-    // log 首页被点击
-    // 跳到首页
-    router.push('/')
+  // 获取菜单数据
+  let menuData:any = menuDataMap.get(index)
+  // 对菜单进行跳转
+  if('internalLink' === menuData.type){
+    // 内部链接
+    router.push(menuData.url)
+  } else {
+    // 外部链接
+    window.open(menuData.url,"_blank")
   }
 }
 
