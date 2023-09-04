@@ -286,18 +286,26 @@ const categoryClick = () => {
 
   let categoryId = getCategoryIdByCategoryValue(categoryValue)
 
-  // 跳转
-  router.push({
-    path: '/',
-    query: {
-      categoryId: categoryId,
-    }
-  })
+  // 为空时，去除categoryId参数
+  if('' === categoryId) {
+    // 跳转
+    router.push({
+      path: '/'
+    })
+  } else {
+    // 跳转
+    router.push({
+      path: '/',
+      query: {
+        categoryId: categoryId,
+      }
+    })
+  }
 }
 
 // 获取用户数据
 const getDataInfo = () => {
-
+  console.log('获取用户数据')
 }
 
 const categoryPanelProps = {
@@ -313,16 +321,21 @@ const categoryPanelProps = {
   label: 'name',
 }
 
+watch(
+    () => route.query,
+    (newValue, oldValue) => {
+      let categoryId: any = newValue.categoryId
+      if (categoryId == null || '' === categoryId) {
+
+      } else {
+        categoryValue.value = getCategoryValueByCategoryId(categoryId)
+      }
+      getDataInfo()
+    },
+    { immediate: true }
+)
 onMounted(() => {
-  // 分类选择处理
-  let categoryId: any = route.query.categoryId
-  if (categoryId == null || '' === categoryId) {
 
-  } else {
-    categoryValue.value = getCategoryValueByCategoryId(categoryId)
-  }
-
-  getDataInfo()
 })
 </script>
 

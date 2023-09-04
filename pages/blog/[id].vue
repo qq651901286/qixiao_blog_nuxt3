@@ -12,7 +12,7 @@
             <el-col :span="4">
               <div class="category">
                 分类：
-                <el-button size="small" type="primary">Java</el-button>
+                <el-button @click="categoryClick('111')" size="small" type="primary">Java</el-button>
               </div>
             </el-col>
             <el-col :span="6">
@@ -32,6 +32,8 @@
 <script setup lang="ts">
 import { MdPreview } from 'md-editor-v3';
 import 'md-editor-v3/lib/preview.css';
+
+const router = useRouter()
 
 const id = 'preview-only';
 const text = ref('# 项目介绍\n' +
@@ -76,6 +78,16 @@ const text = ref('# 项目介绍\n' +
     '\n' +
     '<img src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/myPicture/alipay.jpg" alt=" " style="zoom:50%;" />\n' );
 
+// 分类被点击
+const categoryClick = (categoryId:string) => {
+  // 跳转
+  router.push({
+    path: '/',
+    query: {
+      categoryId: categoryId,
+    }
+  })
+}
 
 </script>
 

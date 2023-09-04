@@ -27,7 +27,7 @@
 
               <div class="bottom">
                 <div class="left">
-                  <el-button size="small" type="primary">Java</el-button>
+                  <el-button @click="categoryClick('111')" size="small" type="primary">Java</el-button>
                 </div>
                 <div class="right">
                   发布时间：2023年8月24日22:56:00
@@ -140,6 +140,17 @@ const handleCurrentChange = (val: number) => {
 // 博客标题被点击
 const titleClick = (id:any) => {
   router.push('/blog/'+ id)
+}
+
+// 分类被点击
+const categoryClick = (categoryId:string) => {
+  // 跳转
+  router.push({
+    path: '/',
+    query: {
+      categoryId: categoryId,
+    }
+  })
 }
 
 </script>
