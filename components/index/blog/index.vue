@@ -82,20 +82,15 @@
             <svg t="1692785136470" @click="contactClick('gitee')" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2698" width="32" height="32"><path d="M512 1024C230.4 1024 0 793.6 0 512S230.4 0 512 0s512 230.4 512 512-230.4 512-512 512z m259.2-569.6H480c-12.8 0-25.6 12.8-25.6 25.6v64c0 12.8 12.8 25.6 25.6 25.6h176c12.8 0 25.6 12.8 25.6 25.6v12.8c0 41.6-35.2 76.8-76.8 76.8h-240c-12.8 0-25.6-12.8-25.6-25.6V416c0-41.6 35.2-76.8 76.8-76.8h355.2c12.8 0 25.6-12.8 25.6-25.6v-64c0-12.8-12.8-25.6-25.6-25.6H416c-105.6 0-188.8 86.4-188.8 188.8V768c0 12.8 12.8 25.6 25.6 25.6h374.4c92.8 0 169.6-76.8 169.6-169.6v-144c0-12.8-12.8-25.6-25.6-25.6z"  p-id="2699"></path></svg>
             <svg t="1692785597660" @click="contactClick('blibli')" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="9284" width="32" height="32"><path d="M128 853.333333h768a42.666667 42.666667 0 0 1 0 85.333334H128a42.666667 42.666667 0 0 1 0-85.333334zM256 85.333333h512a170.666667 170.666667 0 0 1 170.666667 170.666667v341.333333a170.666667 170.666667 0 0 1-170.666667 170.666667H256a170.666667 170.666667 0 0 1-170.666667-170.666667V256a170.666667 170.666667 0 0 1 170.666667-170.666667z m0 85.333334a85.333333 85.333333 0 0 0-85.333333 85.333333v341.333333a85.333333 85.333333 0 0 0 85.333333 85.333334h512a85.333333 85.333333 0 0 0 85.333333-85.333334V256a85.333333 85.333333 0 0 0-85.333333-85.333333H256z m42.666667 85.333333a42.666667 42.666667 0 0 1 42.666666 42.666667v256a42.666667 42.666667 0 0 1-85.333333 0V298.666667a42.666667 42.666667 0 0 1 42.666667-42.666667z m213.333333 170.666667a42.666667 42.666667 0 0 1 42.666667 42.666666v85.333334a42.666667 42.666667 0 0 1-85.333334 0v-85.333334a42.666667 42.666667 0 0 1 42.666667-42.666666z m213.333333-85.333334a42.666667 42.666667 0 0 1 42.666667 42.666667v170.666667a42.666667 42.666667 0 0 1-85.333333 0V384a42.666667 42.666667 0 0 1 42.666666-42.666667z" p-id="9285"></path></svg>
             <svg t="1692785371796" @click="contactClick('email')" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5940" width="32" height="32"><path d="M838.954667 234.666667H170.666667c-3.626667 0-7.168 0.448-10.56 1.322666l323.690666 323.669334a21.333333 21.333333 0 0 0 30.165334 0L838.954667 234.666667z m46.144 14.186666l-260.693334 260.693334 262.933334 262.912c5.44-7.168 8.661333-16.106667 8.661333-25.792V277.333333c0-10.944-4.117333-20.906667-10.88-28.48zM843.861333 789.333333l-249.6-249.621333-50.133333 50.133333a64 64 0 0 1-90.517333 0l-50.112-50.133333L156.373333 786.88c4.48 1.578667 9.28 2.453333 14.314667 2.453333h673.194667zM128.661333 754.218667L373.333333 509.525333 129.578667 265.813333A42.709333 42.709333 0 0 0 128 277.333333v469.333334c0 2.56 0.213333 5.098667 0.661333 7.552zM170.666667 192h682.666666a85.333333 85.333333 0 0 1 85.333334 85.333333v469.333334a85.333333 85.333333 0 0 1-85.333334 85.333333H170.666667a85.333333 85.333333 0 0 1-85.333334-85.333333V277.333333a85.333333 85.333333 0 0 1 85.333334-85.333333z" p-id="5941"></path></svg>
-            <!--多设置一个，不然会不显示-->
-            <el-dialog v-if="false" v-show="false" v-model="contactDialogVisible" :title="contactDataDialog.title">
-              <div>
-                多设置一个，不然会不显示
-              </div>
-            </el-dialog>
-            <el-dialog v-model="contactDialogVisible" :title="contactDataDialog.title">
-              <div>
-                <el-image v-if="contactDataDialog.type == 'image' " :src="contactDataDialog.content" />
-                <el-text v-if="contactDataDialog.type == 'text' " > {{ contactDataDialog.content }}</el-text>
-              </div>
-            </el-dialog>
+            <client-only>
+              <el-dialog v-if="refreshContactDialog" v-model="contactDialogVisible" :title="contactDataDialog.title">
+                <div>
+                  <el-image v-if="contactDataDialog.type == 'image' " :src="contactDataDialog.content" />
+                  <el-text v-if="contactDataDialog.type == 'text' " > {{ contactDataDialog.content }}</el-text>
+                </div>
+              </el-dialog>
+            </client-only>
           </div>
-
         </el-card>
 
         <el-card shadow="never" class="recommend-card">
@@ -247,14 +242,22 @@ const contactDataDialog = ref({
   // 内容图片是url，文字是文本内容
   content: '',
 })
+// 刷新Dialog解决第一次不展示问题
+const refreshContactDialog = ref(true)
 
 const contactClick = (value:string) => {
   let contactData: any = contactDataMap.get(value)
   if ('image' === contactData.type || 'text' === contactData.type) {
+
     contactDialogVisible.value = true
     contactDataDialog.value.title = contactData.name
     contactDataDialog.value.type = contactData.type
     contactDataDialog.value.content = contactData.content
+
+    // nextTick(() => {
+    //   refreshContactDialog.value = true
+    // })
+
   } else if ('externalLink' === contactData.type) {
     // 外部链接
     window.open(contactData.content,"_blank")
