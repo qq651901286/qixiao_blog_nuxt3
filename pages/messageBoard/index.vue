@@ -2,7 +2,7 @@
   <div class="container">
     <div class="content">
       <client-only>
-        <vue-danmaku ref="danmakuRef" v-model:danmus="danmus" useSlot loop>
+        <vue-danmaku v-if="refreshDanmaku" ref="danmakuRef" v-model:danmus="danmus" useSlot loop>
           <template v-slot:dm="{ index, danmu }">
             <span class="text">{{ index }}{{ danmu.name }}：{{ danmu.text }}</span>
           </template>
@@ -60,12 +60,15 @@ const danmus = ref([
   { avatar: 'http://a.com/b.jpg', name: 'b', text: 'bbb' },
 ])
 const danmakuRef = ref()
+const refreshDanmaku = ref(true)
 
 onMounted(()=>{
-
-  nextTick(()=>{
-    console.log(danmakuRef.value)
-  })
+  nextTick(() => {
+    setTimeout(() => {
+      danmakuRef.value.resize();
+      danmakuRef.value.play();
+    }, 100);
+  });
 })
 
 </script>
