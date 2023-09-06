@@ -20,6 +20,9 @@ dependencies:
   sass:
     specifier: ^1.64.2
     version: 1.66.1
+  vue3-danmaku:
+    specifier: ^1.5.2
+    version: 1.5.2(vue@3.3.4)
 
 devDependencies:
   '@element-plus/nuxt':
@@ -8140,6 +8143,14 @@ packages:
       '@vue/devtools-api': 6.5.0
       vue: 3.3.4
     dev: true
+
+  /vue3-danmaku@1.5.2(vue@3.3.4):
+    resolution: {integrity: sha512-4/FxyeDy43tfl3TEl00EEqH+SQXOgINrIcucTeMjoO8uYBWK3JTIVGK7s2Ces9s0JXBRqsmDxUNT+7pkZqA7Bw==}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      vue: 3.3.4
+    dev: false
 
   /vue@3.3.4:
     resolution: {integrity: sha512-VTyEYn3yvIeY1Py0WaYGZsXnz3y5UnGi62GjVEqvEGPl6nxbOrCXbVOTQWBEJUqAyTUk2uJ5JLVnYJ6ZzGbrSw==}
