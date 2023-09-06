@@ -2,7 +2,7 @@
   <div class="container">
     <div class="content">
       <client-only>
-        <vue-danmaku ref="danmaku" v-model:danmus="danmus" useSlot loop>
+        <vue-danmaku ref="danmakuRef" v-model:danmus="danmus" useSlot loop>
           <template v-slot:dm="{ index, danmu }">
             <span class="text">{{ index }}{{ danmu.name }}：{{ danmu.text }}</span>
           </template>
@@ -59,7 +59,14 @@ const danmus = ref([
   { avatar: 'http://a.com/b.jpg', name: 'b', text: 'bbb' },
   { avatar: 'http://a.com/b.jpg', name: 'b', text: 'bbb' },
 ])
+const danmakuRef = ref()
 
+onMounted(()=>{
+
+  nextTick(()=>{
+    console.log(danmakuRef.value)
+  })
+})
 
 </script>
 
