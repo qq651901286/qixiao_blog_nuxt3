@@ -1,6 +1,6 @@
 # 项目介绍
 
-<img src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/logo.png" style="zoom:25%;" />这是一个博客系统，主要是记录个人的一些东西，感觉没啥可看的，主要是记录
+<img src="https://china-qixiao.oss-cn-beijing.aliyuncs.com/qixiao-blog/logo.png" style="zoom:25%;" />这是一个博客系统，主要是记录个人的一些东西，适合新手学习的一个项目，主要是记录
 自己学过的知识
 
 ## 技术栈
