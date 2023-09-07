@@ -305,7 +305,7 @@ const categoryClick = () => {
 
 // 获取用户数据
 const getDataInfo = () => {
-  console.log('获取用户数据')
+  // console.log('获取用户数据')
 }
 
 const categoryPanelProps = {

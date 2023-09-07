@@ -8,6 +8,7 @@
                 class="el-menu-demo"
                 mode="horizontal"
                 :ellipsis="false"
+                :default-active="defaultActiveMenu"
                 @select="menuHandleSelect"
             >
               <el-menu-item index="100">
@@ -231,11 +232,33 @@ const createFilter = (queryString: string) => {
   }
 }
 
-onMounted(() => {
-  // 加载搜索数据
-  links.value = loadAll()
-})
+const route = useRoute()
+// 默认激活的菜单
+const defaultActiveMenu = ref();
+const urlToIndexMap = new Map([
+  [
+    '/','200'
+  ],
+  [
+      '/messageBoard','400'
+  ],
+  [
+    '/friendLink','500'
+  ],
+  [
+    '/about','600'
+  ],
+  [
+    '/oneself/experience','700-3'
+  ],
+  [
+    '/oneself/contactInformation','700-4'
+  ],
+])
 
+onMounted(() => {
+  defaultActiveMenu.value = urlToIndexMap.get(route.path)
+})
 
 </script>
 
