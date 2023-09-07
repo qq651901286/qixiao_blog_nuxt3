@@ -17,33 +17,32 @@
       </client-only>
 
       <div class="sendMessage">
-        <el-row justify="center" :gutter="20">
-          <el-col :span="6">
+        <el-form
+            ref="sendMessageDataFormRef"
+            :model="sendMessageDataForm"
+            :rules="sendMessageDataRules"
+            label-width="120px"
+        >
+          <el-form-item label="名称" prop="name">
             <el-input
-                v-model="sendMessageData.name"
+                v-model="sendMessageDataForm.name"
                 placeholder="请输入名称"
             >
-              <template #prepend>
-                名称：
-              </template>
             </el-input>
-          </el-col>
+          </el-form-item>
 
-          <el-col :span="8">
+          <el-form-item label="留言内容" prop="text">
             <el-input
-                v-model="sendMessageData.text"
+                v-model="sendMessageDataForm.text"
                 placeholder="请输入留言内容"
             >
-              <template #prepend>
-                内容：
-              </template>
             </el-input>
-          </el-col>
+          </el-form-item>
 
-          <el-col :span="2">
+          <el-form-item>
             <el-button type="primary" @click="sendMessageClick">留言</el-button>
-          </el-col>
-        </el-row>
+          </el-form-item>
+        </el-form>
       </div>
 
     </div>
@@ -52,11 +51,30 @@
 
 <script setup lang="ts">
 import vueDanmaku from 'vue3-danmaku'
+import {FormInstance,FormRules} from "element-plus";
+
+const sendMessageDataFormRef:any = ref<FormInstance>()
 
 // 留言内容
-const sendMessageData = ref({
+const sendMessageDataForm = reactive({
   name:'',
   text:'',
+})
+
+// 留言表单内容类型
+interface SendMessageDataForm {
+  name:string,
+  text:string,
+}
+
+// 留言内容校验器
+const sendMessageDataRules = reactive<FormRules<SendMessageDataForm>>({
+  name:[
+    { required: true, message: '请输入名称', trigger: 'blur' },
+  ],
+  text:[
+    { required: true, message: '请输入内容', trigger: 'blur' },
+  ],
 })
 
 // 弹幕数据
@@ -69,33 +87,25 @@ const danmakuRef = ref()
 
 // 留言被点击
 const sendMessageClick = ()=> {
+  sendMessageDataFormRef.value.validate((valid: any, fields: any) => {
+    if (valid) {
 
-  let name = sendMessageData.value.name;
-  let text = sendMessageData.value.text;
-  if(name == null || '' === name){
-    name = '游客'
-  }
+      let name = sendMessageDataForm.name;
+      let text = sendMessageDataForm.text;
 
-  if(text == null || '' === text){
-    // 提示内容不能为空
-    ElMessage({
-      message: '留言内容不能为空',
-      type: 'error',
-      duration: 2000,
-      center:true,
-    })
-    return
-  }
+      // 发送弹幕到屏幕
+      danmakuRef.value.add(
+          {
+            'name':name,
+            'text':text,
+          }
+      )
 
-  // 发送弹幕到屏幕
-  danmakuRef.value.add(
-      {
-        'name':name,
-        'text':text,
-      }
-  )
-
-  // 发送到后端
+      // 发送到后端
+    } else {
+      return
+    }
+  })
 }
 
 onMounted(() => {
@@ -118,7 +128,6 @@ onMounted(() => {
     width: 1200px;
     height: 800px;
     margin-top: 20px;
-
     .vue-danmaku {
       background: #fdf6ec;
       height: 300px;
@@ -130,10 +139,10 @@ onMounted(() => {
 
     .sendMessage {
       margin-top: 20px;
-      .el-row {
-        .el-input,.el-button {
-          height: 40px;
-        }
+      display: flex;
+      justify-content: center;
+      .el-form{
+        width: 400px;
       }
     }
   }
