@@ -257,6 +257,8 @@ const urlToIndexMap = new Map([
 ])
 
 onMounted(() => {
+  // 加载搜索数据
+  links.value = loadAll()
   defaultActiveMenu.value = urlToIndexMap.get(route.path)
 })
 
