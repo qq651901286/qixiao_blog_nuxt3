@@ -7,7 +7,7 @@
                            :props="categoryPanelProps"/>
       </div>
 
-      <div class="blog">
+      <div class="blog-content">
         <div class="left">
           <el-card class="blog" v-for="i in 5" shadow="hover">
             <el-row>
@@ -620,7 +620,7 @@ onMounted(() => {
     .category {
 
     }
-    .blog {
+    .blog-content {
       margin-top: 20px;
       display: flex;
       justify-content: space-between;
